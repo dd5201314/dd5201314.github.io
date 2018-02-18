@@ -232,6 +232,652 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/18/Python学习笔记-五-函数参数类型检查/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Li Jing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="dd5201314">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/18/Python学习笔记-五-函数参数类型检查/" itemprop="url">Python学习笔记(五)函数参数类型检查</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T21:44:15+08:00">
+                2018-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="instance-的用法"><a href="#instance-的用法" class="headerlink" title="instance()的用法"></a>instance()的用法</h4><hr>
+<p>语法：</p>
+<pre><code>instance(object, classinfo)
+</code></pre><p>其中，object是变量，classinfo是类型(int/float/bool/list/tuple/dict/set)和类(class)，如果object是classinfo类的一个实例或是classinfo类的子类的一个实例，则返回Ture，否则返回False。如果classinfo不是一种数据类型或有数据类型构成的元组，将引发一个TypeError异常。</p>
+<h2 id="type-也可以判断对象类型，但是不能判断class类的子类对象类型。"><a href="#type-也可以判断对象类型，但是不能判断class类的子类对象类型。" class="headerlink" title="type()也可以判断对象类型，但是不能判断class类的子类对象类型。"></a>type()也可以判断对象类型，但是不能判断class类的子类对象类型。</h2><p>例子：函数my_abs()</p>
+<pre><code>def my_abs(x):
+if not isinstance(x, (int, float)):
+    raise TypeError(&apos;bad operand type&apos;)
+if x &gt;=0:
+    return x
+else:
+    return -x
+
+
+&gt;&gt;&gt;my_abs(&apos;a&apos;)
+Traceback (most recent call last):
+File &quot;/Users/lijing/python_test/test.py&quot;, line 10, in &lt;module&gt;
+p = my_abs(&apos;a&apos;)
+File &quot;/Users/lijing/python_test/test.py&quot;, line 4, in my_abs
+raise TypeError(&apos;bad operand type&apos;)
+TypeError: bad operand type
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/18/Python学习笔记-四-list、tuple、dict及set的比较/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Li Jing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="dd5201314">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/18/Python学习笔记-四-list、tuple、dict及set的比较/" itemprop="url">Python学习笔记(四)list、tuple、dict及set的比较</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T21:43:39+08:00">
+                2018-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="4种特殊数据类型"><a href="#4种特殊数据类型" class="headerlink" title="4种特殊数据类型"></a>4种特殊数据类型</h1><hr>
+<p>###1. 列表（list）<br>有序集合，可增删改查:</p>
+<pre><code>&gt;&gt;&gt; classmates = [&apos;Jack&apos;, &apos;Lucy&apos;, &apos;Tom&apos;]
+&gt;&gt;&gt; classmates
+[&apos;Jack&apos;, &apos;Lucy&apos;, &apos;Tom&apos;]
+</code></pre><p><strong>·增：</strong><br>append()方法与insert()方法</p>
+<pre><code>#末尾添加
+&gt;&gt;&gt; classmates.append(&apos;Bob&apos;)
+&gt;&gt;&gt; classmates
+[&apos;Jack&apos;, &apos;Lucy&apos;, &apos;Tom&apos;, &apos;Bob&apos;]
+#指定位置插入
+&gt;&gt;&gt; classmates.insert(2,&apos;Michel&apos;)
+&gt;&gt;&gt; classmates
+[&apos;Jack&apos;, &apos;Lucy&apos;, &apos;Michel&apos;, &apos;Tom&apos;, &apos;Bob&apos;]
+</code></pre><p><strong>·删：</strong><br>pop()方法</p>
+<pre><code>#末尾删除
+&gt;&gt;&gt; classmates.pop()
+&apos;Bob&apos;
+&gt;&gt;&gt; classmates
+[&apos;Jack&apos;, &apos;Lucy&apos;, &apos;Michel&apos;, &apos;Tom&apos;]
+#指定位置删除
+&gt;&gt;&gt; classmates.pop(2)
+&apos;Michel&apos;
+&gt;&gt;&gt; classmates
+[&apos;Jack&apos;, &apos;Lucy&apos;, &apos;Tom&apos;]
+</code></pre><p><strong>·改：</strong><br>直接赋值</p>
+<pre><code>&gt;&gt;&gt; classmates[1]=&apos;Bob&apos;
+&gt;&gt;&gt; classmates
+[&apos;Jack&apos;, &apos;Bob&apos;, &apos;Tom&apos;]
+</code></pre><p><strong>·查：</strong><br>使用索引，list[0]表示第一个元素，list[-1]表示最后一个元素，list中有list元素可使用多重索引</p>
+<pre><code>&gt;&gt;&gt; num = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,[&apos;d&apos;, &apos;e&apos;], &apos;f&apos;]
+&gt;&gt;&gt; num
+[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, [&apos;d&apos;, &apos;e&apos;], &apos;f&apos;]
+&gt;&gt;&gt; num[0]
+&apos;a&apos;
+&gt;&gt;&gt; num[-2]
+[&apos;d&apos;, &apos;e&apos;]
+&gt;&gt;&gt; num[0:-1]
+[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, [&apos;d&apos;, &apos;e&apos;]]
+&gt;&gt;&gt; num[-2][1]
+&apos;e&apos;
+#num有5个元素，其中num[3]是一个list
+&gt;&gt;&gt;len(num) 
+5
+</code></pre><hr>
+<p>###2. 元组（tuple）<br>tuple是有序列表，与list很像，但是tuple一旦初始化就不能修改，只能查找,索引方式与list相同</p>
+<pre><code>&gt;&gt;&gt; t = (1, 2, &apos;python&apos;)
+&gt;&gt;&gt; t
+(1, 2, &apos;python&apos;)
+&gt;&gt;&gt; t[0]
+1
+&gt;&gt;&gt; t[-1]
+&apos;python&apos;
+</code></pre><p><strong>·初始化只有一个元素的tuple</strong></p>
+<pre><code>&gt;&gt;&gt; t = (1, )
+&gt;&gt;&gt; t
+(1,)
+</code></pre><p><strong>·关于元素不可变</strong></p>
+<pre><code>&gt;&gt;&gt; t = (1, 2, [3, 4])
+&gt;&gt;&gt; t
+(1, 2, [3, 4])
+&gt;&gt;&gt; t[-1][0]=&apos;change&apos;
+&gt;&gt;&gt; t
+(1, 2, [&apos;change&apos;, 4])
+</code></pre><h2 id="这个tuple有三个元素，1，2，和一个list。表面看tuple变了，但其实不是tuple的元素变了，而是list的元素变了，tuple的指向并没有变，依然是原先的list。因此tuple元素不可变指的是“指向不变”，指向的对象不变，如果要创建一个内容也不变的tuple，就必须保证其每个元素本身也不能变。"><a href="#这个tuple有三个元素，1，2，和一个list。表面看tuple变了，但其实不是tuple的元素变了，而是list的元素变了，tuple的指向并没有变，依然是原先的list。因此tuple元素不可变指的是“指向不变”，指向的对象不变，如果要创建一个内容也不变的tuple，就必须保证其每个元素本身也不能变。" class="headerlink" title="######这个tuple有三个元素，1，2，和一个list。表面看tuple变了，但其实不是tuple的元素变了，而是list的元素变了，tuple的指向并没有变，依然是原先的list。因此tuple元素不可变指的是“指向不变”，指向的对象不变，如果要创建一个内容也不变的tuple，就必须保证其每个元素本身也不能变。"></a>######这个tuple有三个元素，1，2，和一个list。表面看tuple变了，但其实不是tuple的元素变了，而是list的元素变了，tuple的指向并没有变，依然是原先的list。因此tuple元素不可变指的是“指向不变”，指向的对象不变，如果要创建一个内容也不变的tuple，就必须保证其每个元素本身也不能变。</h2><p>###3. 字典（dict）<br>在其他语言中称为map，使用键-值(key-value)存储，具有极快的查找速度。与list比较，dict查找和插入速度快，不会随key的增加而变慢，需要占用的内存比list大很多，所以，dict是用空间来换取时间的一种方法。<br>dict是无序的，可进行增删改查</p>
+<pre><code>&gt;&gt;&gt; d = {&apos;Jack&apos;:95, &apos;Lucy&apos;:90, &apos;Tom&apos;:88}
+&gt;&gt;&gt; d
+{&apos;Jack&apos;: 95, &apos;Lucy&apos;: 90, &apos;Tom&apos;: 88}
+#增
+&gt;&gt;&gt; d[&apos;Bob&apos;]=99
+&gt;&gt;&gt; d
+{&apos;Jack&apos;: 95, &apos;Lucy&apos;: 100, &apos;Tom&apos;: 88, &apos;Bob&apos;: 99}
+#删
+&gt;&gt;&gt; d.pop(&apos;Bob&apos;)
+99
+&gt;&gt;&gt; d
+{&apos;Jack&apos;: 95, &apos;Lucy&apos;: 100, &apos;Tom&apos;: 88}
+#改
+&gt;&gt;&gt; d[&apos;Lucy&apos;]
+90
+&gt;&gt;&gt; d[&apos;Lucy&apos;]=100
+&gt;&gt;&gt; d[&apos;Lucy&apos;]
+100
+</code></pre><p>如果键不存在，dict会报错，避免报错，一是通过in判断key是否存在；而是使用get()方法，如果key不存在，了已返回None，或自己指定的value：</p>
+<pre><code>&gt;&gt;&gt; &apos;Jim&apos; in d
+False 
+&gt;&gt;&gt; d.get(&apos;Jim&apos;)
+&gt;&gt;&gt; d.get(&apos;Jim&apos;,&apos;false&apos;)
+&apos;false&apos;
+&gt;&gt;&gt; d.get(&apos;Jim&apos;,False)
+False
+</code></pre><hr>
+<p>###4. 集合（set）<br>set和dict类似，也是一组key的集合，但是不存储value，由于key不能重复，所以，set中没有重复的key，set可看做是数学意义上的无序和无重复元素的组合。要创建set，需要提供一个list作为输入集合：</p>
+<pre><code>&gt;&gt;&gt; s = set([1,2,3,3,2,1])
+&gt;&gt;&gt; s
+{1, 2, 3}
+&gt;&gt;&gt; s.add(4)
+&gt;&gt;&gt; s
+{1, 2, 3, 4}
+&gt;&gt;&gt; s.add(&apos;Python&apos;)
+&gt;&gt;&gt; s
+{1, 2, 3, 4, &apos;Python&apos;}
+&gt;&gt;&gt; s.remove(&apos;Python&apos;)
+&gt;&gt;&gt; s
+{1, 2, 3, 4}
+&gt;&gt;&gt; s1 = set([1,3,5,7])
+&gt;&gt;&gt; s&amp;s1
+{1, 3}
+&gt;&gt;&gt; s|s1
+{1, 2, 3, 4, 5, 7}
+</code></pre><p>set和dict一样，不可放入可变对s象，因为无法判断两个可变对象是否相等，也就无法保证set内部“不会有重复元素”.<br><strong>注意：str是不可变对象，list是可变对象</strong></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/18/Python学习笔记-三-字符编码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Li Jing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="dd5201314">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/18/Python学习笔记-三-字符编码/" itemprop="url">Python学习笔记(三)字符编码</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T21:42:59+08:00">
+                2018-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-常用编码"><a href="#1-常用编码" class="headerlink" title="1. 常用编码"></a>1. 常用编码</h3><hr>
+<p>·ASCII：一个字节（没有汉字），<br>·Unicode：包含各国语言，通常是两个字节，如果用到特别生僻的字符，需要4个字节<br>·UTF-8：Unicode的变种，可变长编码，将一个Unicode字符根据大小编码成1-6个字节，常用英文字母1个字节，汉字通常3个字节，生僻字符4-6个字节</p>
+<p>很多网页源码：</p>
+<h2 id="表示采用的是UTF-8编码"><a href="#表示采用的是UTF-8编码" class="headerlink" title="  :  表示采用的是UTF-8编码"></a><meta charset="UTF-8">  :  表示采用的是UTF-8编码</h2><h3 id="2-Python字符串"><a href="#2-Python字符串" class="headerlink" title="2. Python字符串"></a>2. Python字符串</h3><p>在Python3中，字符串使用Unicode编码，即它支持多国语言。ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>ord(‘P’)<br>80<br>chr(81)<br>‘Q’<br>若知道字符整数编码可写作如下：</p>
+<p>‘\u4e2d\u6587’<br>‘中文’<br>Python中，字符串类型为str，在内存中以Unicode编码存在，其一个字符对应若干个字节。如果要在网络上传输，或者保存到磁盘，需要把str变为以字节为单位的bytes。Python对bytes类型的数据用带b前缀的单引号或双引号表示：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>x = b’ABC’<br>‘ABC’与b’ABC’的区别：前者为str，后者为bytes，显示内容一样，但bytes的每个字符只占用一个字节。<br>以Unicode表示的str通过encode()方法可以编码为指定的bytes，如：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>‘Python’.encode(‘ascii’)<br>b’Python’<br>‘中国’.encode(‘utf-8’)<br>b’\xe4\xb8\xad\xe5\x9b\xbd’<br>‘Python’.encode(‘utf-8’)<br>b’Python’<br>‘中国’.encode(‘ascii’)<br>Traceback (most recent call last):<br>File “<stdin>“, line 1, in <module><br>UnicodeEncodeError: ‘ascii’ codec can’t encode characters in position 0-1:      ordinal not in range(128)<br>可以看出，含有中文的str无法用ASCII编码，因为中文的编码范围超出了ASCII编码范围。<br>反过来，如果从网络或磁盘上读取字节流，那么读到的是bytes，要将其转变为str，用decode()方法：</module></stdin></p>
+<p>b’Python’.decode(‘utf-8’)<br>‘Python’<br>b’\xe4\xb8\xad\xe5\x9b\xbd’.decode(‘utf-8’)<br>‘中国’<br>如果bytes中包含无法解码的字节，会报错：</p>
+<p>b’\xe4\xb8\xad\xe5’.decode(‘utf-8’)<br>Traceback (most recent call last):<br>File “<stdin>“, line 1, in <module><br>UnicodeDecodeError: ‘utf-8’ codec can’t decode byte 0xe5 in position 3:     unexpected end of data<br>如果bytes中只有一小部分无效字节，可以传入<em>errors=’ignore’</em>忽略错误字节：</module></stdin></p>
+<p>b’\xe4\xb8\xad\xe5’.decode(‘utf-8’, errors=’ignore’)<br>‘中’<br>len()的使用：对于str，用来计算字符数，对于bytes，用来计算字节数：</p>
+<p>len(‘Python’)<br>6<br>len(‘中国’)<br>2<br>len(‘Python’.encode(‘utf-8’))<br>6<br>len(‘中国’.encode(‘utf-8’))<br>6<br>可以看出，转换后，一个中文字符一般占用3个字节，一个英文字符只占用1个字节。<strong>在进行str与bytes的转换时，应当始终坚持使用UTF-8编码方式。</strong><br>特殊情况下，可能需要使用特殊编码，如：</p>
+<p>‘中国’.encode(‘gb2312’)<br>b’\xd6\xd0\xb9\xfa’<br><em>GB2312编码：GB2312是国家制定的汉字编码标准,使用双子节进行编码。由6763个常用汉字和682个的非汉字字符组成，一个汉字两个字节。对于一些生僻字及古文，使用扩充后的GBK编码。</em></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>在写Python源代码.py文件时，一般在开头写上：</p>
+<p>#！usr/bin/env python3</p>
+<h1 id="coding-utf-8"><a href="#coding-utf-8" class="headerlink" title="-- coding: utf-8 --"></a>-<em>- coding: utf-8 -</em>-</h1><p>第一行：对于Linux/OS X系统，提示系统这是一个Python可执行程序，对于Windows系统，会忽略该条注释<br>第二行：告诉Python解释器，按照UTF-8编码来读取源代码，否则源代码中的中文可能出现乱码</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/18/Python学习笔记-二-几种除法的比较/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Li Jing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="dd5201314">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/18/Python学习笔记-二-几种除法的比较/" itemprop="url">Python学习笔记(二)几种除法的比较</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T21:42:39+08:00">
+                2018-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="传统除法（‘-‘）、真除法、floor除法（‘-‘）"><a href="#传统除法（‘-‘）、真除法、floor除法（‘-‘）" class="headerlink" title="传统除法（‘ /‘）、真除法、floor除法（‘ // ‘）"></a>传统除法（<em>‘ /‘</em>）、真除法、floor除法（<em>‘ // ‘</em>）</h4><hr>
+<pre><code>x/y
+</code></pre><p>·传统除法和真除法：在Python2.7之前，对整数操作，结果有小数的会舍去小数部分，只保留整数部分，对浮点数操作会保留小数部分。在Python3中，传统除法都被转换为真除法（即无论如何结果均会保留小数部分）。</p>
+<pre><code>x//y
+</code></pre><p>·floor除法：其实就是floor(x/y),传统除法结果向下取整，返回结果永远是整数。<br>例如：<br><img src="http://upload-images.jianshu.io/upload_images/5640632-c05cd8975ca5b011.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="几种除法比较.png"></p>
+<p>注意<em>‘import math’</em>，math中常用函数：</p>
+<pre><code>floor():向下取整函数
+ceil():向上取整函数
+trunc():截断函数（只保留整数部分）
+</code></pre><p><strong>注：整数的运算结果是精确的</strong></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/18/Python学习笔记-一-基本数据类型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -539,7 +1185,7 @@ keep on!
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>

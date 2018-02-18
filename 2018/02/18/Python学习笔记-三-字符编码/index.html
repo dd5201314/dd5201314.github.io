@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="1. 常用编码 ·ASCII：一个字节（没有汉字），·Unicode：包含各国语言，通常是两个字节，如果用到特别生僻的字符，需要4个字节·UTF-8：Unicode的变种，可变长编码，将一个Unicode字符根据大小编码成1-6个字节，常用英文字母1个字节，汉字通常3个字节，生僻字符4-6个字节 很多网页源码：   :  表示采用的是UTF-8编码2. Python字符串在Python3中，字符串">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/02/16/hello-world/index.html">
+<meta property="og:title" content="Python学习笔记(三)字符编码">
+<meta property="og:url" content="http://yoursite.com/2018/02/18/Python学习笔记-三-字符编码/index.html">
 <meta property="og:site_name" content="dd5201314">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="1. 常用编码 ·ASCII：一个字节（没有汉字），·Unicode：包含各国语言，通常是两个字节，如果用到特别生僻的字符，需要4个字节·UTF-8：Unicode的变种，可变长编码，将一个Unicode字符根据大小编码成1-6个字节，常用英文字母1个字节，汉字通常3个字节，生僻字符4-6个字节 很多网页源码：   :  表示采用的是UTF-8编码2. Python字符串在Python3中，字符串">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2018-02-16T02:47:42.582Z">
+<meta property="og:updated_time" content="2018-02-18T13:46:42.094Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Python学习笔记(三)字符编码">
+<meta name="twitter:description" content="1. 常用编码 ·ASCII：一个字节（没有汉字），·Unicode：包含各国语言，通常是两个字节，如果用到特别生僻的字符，需要4个字节·UTF-8：Unicode的变种，可变长编码，将一个Unicode字符根据大小编码成1-6个字节，常用英文字母1个字节，汉字通常3个字节，生僻字符4-6个字节 很多网页源码：   :  表示采用的是UTF-8编码2. Python字符串在Python3中，字符串">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/16/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/18/Python学习笔记-三-字符编码/"/>
 
 
 
 
 
-  <title>Hello World | dd5201314</title>
+  <title>Python学习笔记(三)字符编码 | dd5201314</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/16/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/18/Python学习笔记-三-字符编码/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Li Jing">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">Python学习笔记(三)字符编码</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-16T10:47:42+08:00">
-                2018-02-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T21:42:59+08:00">
+                2018-02-18
               </time>
             
 
@@ -299,15 +299,34 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h3 id="1-常用编码"><a href="#1-常用编码" class="headerlink" title="1. 常用编码"></a>1. 常用编码</h3><hr>
+<p>·ASCII：一个字节（没有汉字），<br>·Unicode：包含各国语言，通常是两个字节，如果用到特别生僻的字符，需要4个字节<br>·UTF-8：Unicode的变种，可变长编码，将一个Unicode字符根据大小编码成1-6个字节，常用英文字母1个字节，汉字通常3个字节，生僻字符4-6个字节</p>
+<p>很多网页源码：</p>
+<h2 id="表示采用的是UTF-8编码"><a href="#表示采用的是UTF-8编码" class="headerlink" title="  :  表示采用的是UTF-8编码"></a><meta charset="UTF-8">  :  表示采用的是UTF-8编码</h2><h3 id="2-Python字符串"><a href="#2-Python字符串" class="headerlink" title="2. Python字符串"></a>2. Python字符串</h3><p>在Python3中，字符串使用Unicode编码，即它支持多国语言。ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>ord(‘P’)<br>80<br>chr(81)<br>‘Q’<br>若知道字符整数编码可写作如下：</p>
+<p>‘\u4e2d\u6587’<br>‘中文’<br>Python中，字符串类型为str，在内存中以Unicode编码存在，其一个字符对应若干个字节。如果要在网络上传输，或者保存到磁盘，需要把str变为以字节为单位的bytes。Python对bytes类型的数据用带b前缀的单引号或双引号表示：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>x = b’ABC’<br>‘ABC’与b’ABC’的区别：前者为str，后者为bytes，显示内容一样，但bytes的每个字符只占用一个字节。<br>以Unicode表示的str通过encode()方法可以编码为指定的bytes，如：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>‘Python’.encode(‘ascii’)<br>b’Python’<br>‘中国’.encode(‘utf-8’)<br>b’\xe4\xb8\xad\xe5\x9b\xbd’<br>‘Python’.encode(‘utf-8’)<br>b’Python’<br>‘中国’.encode(‘ascii’)<br>Traceback (most recent call last):<br>File “<stdin>“, line 1, in <module><br>UnicodeEncodeError: ‘ascii’ codec can’t encode characters in position 0-1:      ordinal not in range(128)<br>可以看出，含有中文的str无法用ASCII编码，因为中文的编码范围超出了ASCII编码范围。<br>反过来，如果从网络或磁盘上读取字节流，那么读到的是bytes，要将其转变为str，用decode()方法：</module></stdin></p>
+<p>b’Python’.decode(‘utf-8’)<br>‘Python’<br>b’\xe4\xb8\xad\xe5\x9b\xbd’.decode(‘utf-8’)<br>‘中国’<br>如果bytes中包含无法解码的字节，会报错：</p>
+<p>b’\xe4\xb8\xad\xe5’.decode(‘utf-8’)<br>Traceback (most recent call last):<br>File “<stdin>“, line 1, in <module><br>UnicodeDecodeError: ‘utf-8’ codec can’t decode byte 0xe5 in position 3:     unexpected end of data<br>如果bytes中只有一小部分无效字节，可以传入<em>errors=’ignore’</em>忽略错误字节：</module></stdin></p>
+<p>b’\xe4\xb8\xad\xe5’.decode(‘utf-8’, errors=’ignore’)<br>‘中’<br>len()的使用：对于str，用来计算字符数，对于bytes，用来计算字节数：</p>
+<p>len(‘Python’)<br>6<br>len(‘中国’)<br>2<br>len(‘Python’.encode(‘utf-8’))<br>6<br>len(‘中国’.encode(‘utf-8’))<br>6<br>可以看出，转换后，一个中文字符一般占用3个字节，一个英文字符只占用1个字节。<strong>在进行str与bytes的转换时，应当始终坚持使用UTF-8编码方式。</strong><br>特殊情况下，可能需要使用特殊编码，如：</p>
+<p>‘中国’.encode(‘gb2312’)<br>b’\xd6\xd0\xb9\xfa’<br><em>GB2312编码：GB2312是国家制定的汉字编码标准,使用双子节进行编码。由6763个常用汉字和682个的非汉字字符组成，一个汉字两个字节。对于一些生僻字及古文，使用扩充后的GBK编码。</em></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>在写Python源代码.py文件时，一般在开头写上：</p>
+<p>#！usr/bin/env python3</p>
+<h1 id="coding-utf-8"><a href="#coding-utf-8" class="headerlink" title="-- coding: utf-8 --"></a>-<em>- coding: utf-8 -</em>-</h1><p>第一行：对于Linux/OS X系统，提示系统这是一个Python可执行程序，对于Windows系统，会忽略该条注释<br>第二行：告诉Python解释器，按照UTF-8编码来读取源代码，否则源代码中的中文可能出现乱码</p>
 
       
     </div>
@@ -332,14 +351,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/02/18/Python学习笔记-二-几种除法的比较/" rel="next" title="Python学习笔记(二)几种除法的比较">
+                <i class="fa fa-chevron-left"></i> Python学习笔记(二)几种除法的比较
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/18/Python学习笔记-一-基本数据类型/" rel="prev" title="Python学习笔记(一)基本数据类型">
-                Python学习笔记(一)基本数据类型 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/18/Python学习笔记-四-list、tuple、dict及set的比较/" rel="prev" title="Python学习笔记(四)list、tuple、dict及set的比较">
+                Python学习笔记(四)list、tuple、dict及set的比较 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -454,7 +477,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-常用编码"><span class="nav-number">1.</span> <span class="nav-text">1. 常用编码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表示采用的是UTF-8编码"><span class="nav-number"></span> <span class="nav-text">  :  表示采用的是UTF-8编码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Python字符串"><span class="nav-number">1.</span> <span class="nav-text">2. Python字符串</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#coding-utf-8"><span class="nav-number"></span> <span class="nav-text">-- coding: utf-8 --</span></a></div>
             
 
           </div>
