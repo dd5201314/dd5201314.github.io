@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Python,数据类型," />
 
 
 
@@ -79,16 +79,17 @@
 
 
 
-<meta name="description" content="1. 整数可直接使用十进制，也可使用十六进制表示，如: &amp;gt;&amp;gt;&amp;gt;print(0xff) 255 2. 浮点数对于小数点比较大的浮点数，如1.45x1010，使用如下表示方式： f = 1.45e10 3. 字符串主要是print的表示方式，有三种，分别是:·单引号：’ ‘（字符串中使用 ‘ 等特殊字符时，必须使用转义字符 “\” ）·双引号：” “（字符串中使用 ‘ 时,可不用转">
+<meta name="description" content="1. 整数可直接使用十进制，也可使用十六进制表示，如: &amp;gt;&amp;gt;&amp;gt;print(0xff) 255 2. 浮点数对于小数点比较大的浮点数，如1.45x1010，使用如下表示方式： f = 1.45e10 3. 字符串主要是print的表示方式，有三种，分别是:·单引号：’ ‘（字符串中使用 ‘ 等特殊字符时，必须使用转义字符 “\” ）·双引号：” “（字符串中使用 ‘ 时,可不用转义">
+<meta name="keywords" content="Python,数据类型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python学习笔记(一)基本数据类型">
 <meta property="og:url" content="http://yoursite.com/2018/02/18/Python学习笔记-一-基本数据类型/index.html">
 <meta property="og:site_name" content="DD5201314">
-<meta property="og:description" content="1. 整数可直接使用十进制，也可使用十六进制表示，如: &amp;gt;&amp;gt;&amp;gt;print(0xff) 255 2. 浮点数对于小数点比较大的浮点数，如1.45x1010，使用如下表示方式： f = 1.45e10 3. 字符串主要是print的表示方式，有三种，分别是:·单引号：’ ‘（字符串中使用 ‘ 等特殊字符时，必须使用转义字符 “\” ）·双引号：” “（字符串中使用 ‘ 时,可不用转">
-<meta property="og:updated_time" content="2018-02-18T13:27:38.108Z">
+<meta property="og:description" content="1. 整数可直接使用十进制，也可使用十六进制表示，如: &amp;gt;&amp;gt;&amp;gt;print(0xff) 255 2. 浮点数对于小数点比较大的浮点数，如1.45x1010，使用如下表示方式： f = 1.45e10 3. 字符串主要是print的表示方式，有三种，分别是:·单引号：’ ‘（字符串中使用 ‘ 等特殊字符时，必须使用转义字符 “\” ）·双引号：” “（字符串中使用 ‘ 时,可不用转义">
+<meta property="og:updated_time" content="2018-02-18T16:06:13.714Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习笔记(一)基本数据类型">
-<meta name="twitter:description" content="1. 整数可直接使用十进制，也可使用十六进制表示，如: &amp;gt;&amp;gt;&amp;gt;print(0xff) 255 2. 浮点数对于小数点比较大的浮点数，如1.45x1010，使用如下表示方式： f = 1.45e10 3. 字符串主要是print的表示方式，有三种，分别是:·单引号：’ ‘（字符串中使用 ‘ 等特殊字符时，必须使用转义字符 “\” ）·双引号：” “（字符串中使用 ‘ 时,可不用转">
+<meta name="twitter:description" content="1. 整数可直接使用十进制，也可使用十六进制表示，如: &amp;gt;&amp;gt;&amp;gt;print(0xff) 255 2. 浮点数对于小数点比较大的浮点数，如1.45x1010，使用如下表示方式： f = 1.45e10 3. 字符串主要是print的表示方式，有三种，分别是:·单引号：’ ‘（字符串中使用 ‘ 等特殊字符时，必须使用转义字符 “\” ）·双引号：” “（字符串中使用 ‘ 时,可不用转义">
 
 
 
@@ -184,17 +185,27 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            Tags
           </a>
         </li>
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -258,7 +269,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T21:25:01+08:00">
                 2018-02-18
@@ -298,13 +309,12 @@
       
 
       
-        <hr>
-<h3 id="1-整数"><a href="#1-整数" class="headerlink" title="1. 整数"></a>1. 整数</h3><p>可直接使用十进制，也可使用十六进制表示，如:</p>
+        <h1 id="1-整数"><a href="#1-整数" class="headerlink" title="1. 整数"></a>1. 整数</h1><p>可直接使用十进制，也可使用十六进制表示，如:</p>
 <pre><code>&gt;&gt;&gt;print(0xff)
 255
-</code></pre><h3 id="2-浮点数"><a href="#2-浮点数" class="headerlink" title="2. 浮点数"></a>2. 浮点数</h3><p>对于小数点比较大的浮点数，如1.45x10<sup>10</sup>，使用如下表示方式：</p>
+</code></pre><h1 id="2-浮点数"><a href="#2-浮点数" class="headerlink" title="2. 浮点数"></a>2. 浮点数</h1><p>对于小数点比较大的浮点数，如1.45x10<sup>10</sup>，使用如下表示方式：</p>
 <pre><code>f = 1.45e10
-</code></pre><h3 id="3-字符串"><a href="#3-字符串" class="headerlink" title="3. 字符串"></a>3. 字符串</h3><p>主要是print的表示方式，有三种，分别是:<br>·单引号：’ ‘（字符串中使用 ‘ 等特殊字符时，必须使用转义字符 “\” ）<br>·双引号：” “（字符串中使用 ‘ 时,可不用转义字符 “\” ,直接输出）<br>·三引号：’’’ ‘’’（可以进行多行输出）</p>
+</code></pre><h1 id="3-字符串"><a href="#3-字符串" class="headerlink" title="3. 字符串"></a>3. 字符串</h1><p>主要是print的表示方式，有三种，分别是:<br>·单引号：’ ‘（字符串中使用 ‘ 等特殊字符时，必须使用转义字符 “\” ）<br>·双引号：” “（字符串中使用 ‘ 时,可不用转义字符 “\” ,直接输出）<br>·三引号：’’’ ‘’’（可以进行多行输出）</p>
 <pre><code>&gt;&gt;&gt; print(&apos;There\&apos;s a tab here:\t!&apos;)
 There&apos;s a tab here:    !
 &gt;&gt;&gt; print(&quot;There&apos;s a tab here:\t!&quot;)
@@ -323,8 +333,8 @@ line3
 ... keep on!&apos;&apos;&apos;)
 good job!\n
 keep on!
-</code></pre><p>###4. 布尔值<br>True和false，没有更特别的地方</p>
-<p>###5. 空值<br>空值是python里的一个特殊值，用<em>None</em>表示</p>
+</code></pre><p>#4. 布尔值<br>True和false，没有更特别的地方</p>
+<p>#5. 空值<br>空值是python里的一个特殊值，用<em>None</em>表示</p>
 
       
     </div>
@@ -339,6 +349,14 @@ keep on!
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/数据类型/" rel="tag"># 数据类型</a>
+          
+        </div>
       
 
       
@@ -415,10 +433,10 @@ keep on!
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -436,16 +454,25 @@ keep on!
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives">
               
                   <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
             
 
           </nav>
@@ -475,7 +502,7 @@ keep on!
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-整数"><span class="nav-number">1.</span> <span class="nav-text">1. 整数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-浮点数"><span class="nav-number">2.</span> <span class="nav-text">2. 浮点数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-字符串"><span class="nav-number">3.</span> <span class="nav-text">3. 字符串</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-整数"><span class="nav-number">1.</span> <span class="nav-text">1. 整数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-浮点数"><span class="nav-number">2.</span> <span class="nav-text">2. 浮点数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-字符串"><span class="nav-number">3.</span> <span class="nav-text">3. 字符串</span></a></li></ol></div>
             
 
           </div>
@@ -505,7 +532,7 @@ keep on!
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
