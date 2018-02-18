@@ -303,7 +303,34 @@
       
         
           
-            
+            <hr>
+<h3 id="1-整数"><a href="#1-整数" class="headerlink" title="1. 整数"></a>1. 整数</h3><p>可直接使用十进制，也可使用十六进制表示，如:</p>
+<pre><code>&gt;&gt;&gt;print(0xff)
+255
+</code></pre><h3 id="2-浮点数"><a href="#2-浮点数" class="headerlink" title="2. 浮点数"></a>2. 浮点数</h3><p>对于小数点比较大的浮点数，如1.45x10<sup>10</sup>，使用如下表示方式：</p>
+<pre><code>f = 1.45e10
+</code></pre><h3 id="3-字符串"><a href="#3-字符串" class="headerlink" title="3. 字符串"></a>3. 字符串</h3><p>主要是print的表示方式，有三种，分别是:<br>·单引号：’ ‘（字符串中使用 ‘ 等特殊字符时，必须使用转义字符 “\” ）<br>·双引号：” “（字符串中使用 ‘ 时,可不用转义字符 “\” ,直接输出）<br>·三引号：’’’ ‘’’（可以进行多行输出）</p>
+<pre><code>&gt;&gt;&gt; print(&apos;There\&apos;s a tab here:\t!&apos;)
+There&apos;s a tab here:    !
+&gt;&gt;&gt; print(&quot;There&apos;s a tab here:\t!&quot;)
+There&apos;s a tab here:    !
+&gt;&gt;&gt; print(&apos;&apos;&apos;line1
+... line2
+... line3&apos;&apos;&apos;)
+line1
+line2
+line3
+</code></pre><p>字符串中转义字符过多时，可使用<em>r’ ‘</em>，其中<em>‘ ‘</em>中间的部分不会进行转义处理，如：</p>
+<pre><code>&gt;&gt;&gt; print(r&apos;\&apos;\t&apos;)
+\&apos;\t
+</code></pre><p>同理，也有<em>r’’’ ‘’’</em>的写法，其中<em>‘’’ ‘’’</em>中的部分依然不会进行转义处理，如：</p>
+<pre><code>&gt;&gt;&gt; print(r&apos;&apos;&apos;good job!\n
+... keep on!&apos;&apos;&apos;)
+good job!\n
+keep on!
+</code></pre><p>###4. 布尔值<br>True和false，没有更特别的地方</p>
+<p>###5. 空值<br>空值是python里的一个特殊值，用<em>None</em>表示</p>
+
           
         
       
