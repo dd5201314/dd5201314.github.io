@@ -682,34 +682,62 @@ False
       
         
           
-            <h3 id="1-常用编码"><a href="#1-常用编码" class="headerlink" title="1. 常用编码"></a>1. 常用编码</h3><hr>
+            <h1 id="1-常用编码"><a href="#1-常用编码" class="headerlink" title="1. 常用编码"></a>1. 常用编码</h1><hr>
 <p>·ASCII：一个字节（没有汉字），<br>·Unicode：包含各国语言，通常是两个字节，如果用到特别生僻的字符，需要4个字节<br>·UTF-8：Unicode的变种，可变长编码，将一个Unicode字符根据大小编码成1-6个字节，常用英文字母1个字节，汉字通常3个字节，生僻字符4-6个字节</p>
 <p>很多网页源码：</p>
-<h2 id="表示采用的是UTF-8编码"><a href="#表示采用的是UTF-8编码" class="headerlink" title="  :  表示采用的是UTF-8编码"></a><meta charset="UTF-8">  :  表示采用的是UTF-8编码</h2><h3 id="2-Python字符串"><a href="#2-Python字符串" class="headerlink" title="2. Python字符串"></a>2. Python字符串</h3><p>在Python3中，字符串使用Unicode编码，即它支持多国语言。ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符：</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>ord(‘P’)<br>80<br>chr(81)<br>‘Q’<br>若知道字符整数编码可写作如下：</p>
-<p>‘\u4e2d\u6587’<br>‘中文’<br>Python中，字符串类型为str，在内存中以Unicode编码存在，其一个字符对应若干个字节。如果要在网络上传输，或者保存到磁盘，需要把str变为以字节为单位的bytes。Python对bytes类型的数据用带b前缀的单引号或双引号表示：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>x = b’ABC’<br>‘ABC’与b’ABC’的区别：前者为str，后者为bytes，显示内容一样，但bytes的每个字符只占用一个字节。<br>以Unicode表示的str通过encode()方法可以编码为指定的bytes，如：</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>‘Python’.encode(‘ascii’)<br>b’Python’<br>‘中国’.encode(‘utf-8’)<br>b’\xe4\xb8\xad\xe5\x9b\xbd’<br>‘Python’.encode(‘utf-8’)<br>b’Python’<br>‘中国’.encode(‘ascii’)<br>Traceback (most recent call last):<br>File “<stdin>“, line 1, in <module><br>UnicodeEncodeError: ‘ascii’ codec can’t encode characters in position 0-1:      ordinal not in range(128)<br>可以看出，含有中文的str无法用ASCII编码，因为中文的编码范围超出了ASCII编码范围。<br>反过来，如果从网络或磁盘上读取字节流，那么读到的是bytes，要将其转变为str，用decode()方法：</module></stdin></p>
-<p>b’Python’.decode(‘utf-8’)<br>‘Python’<br>b’\xe4\xb8\xad\xe5\x9b\xbd’.decode(‘utf-8’)<br>‘中国’<br>如果bytes中包含无法解码的字节，会报错：</p>
-<p>b’\xe4\xb8\xad\xe5’.decode(‘utf-8’)<br>Traceback (most recent call last):<br>File “<stdin>“, line 1, in <module><br>UnicodeDecodeError: ‘utf-8’ codec can’t decode byte 0xe5 in position 3:     unexpected end of data<br>如果bytes中只有一小部分无效字节，可以传入<em>errors=’ignore’</em>忽略错误字节：</module></stdin></p>
-<p>b’\xe4\xb8\xad\xe5’.decode(‘utf-8’, errors=’ignore’)<br>‘中’<br>len()的使用：对于str，用来计算字符数，对于bytes，用来计算字节数：</p>
-<p>len(‘Python’)<br>6<br>len(‘中国’)<br>2<br>len(‘Python’.encode(‘utf-8’))<br>6<br>len(‘中国’.encode(‘utf-8’))<br>6<br>可以看出，转换后，一个中文字符一般占用3个字节，一个英文字符只占用1个字节。<strong>在进行str与bytes的转换时，应当始终坚持使用UTF-8编码方式。</strong><br>特殊情况下，可能需要使用特殊编码，如：</p>
-<p>‘中国’.encode(‘gb2312’)<br>b’\xd6\xd0\xb9\xfa’<br><em>GB2312编码：GB2312是国家制定的汉字编码标准,使用双子节进行编码。由6763个常用汉字和682个的非汉字字符组成，一个汉字两个字节。对于一些生僻字及古文，使用扩充后的GBK编码。</em></p>
-</blockquote>
-</blockquote>
-</blockquote>
+<pre><code>&lt;meta charset=&quot;UTF-8&quot; /&gt;  :  表示采用的是UTF-8编码
+</code></pre><hr>
+<h1 id="2-Python字符串"><a href="#2-Python字符串" class="headerlink" title="2. Python字符串"></a>2. Python字符串</h1><p>在Python3中，字符串使用Unicode编码，即它支持多国语言。ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符：</p>
+<pre><code>&gt;&gt;&gt; ord(&apos;P&apos;)
+80
+&gt;&gt;&gt; chr(81)
+&apos;Q&apos;
+</code></pre><p>若知道字符整数编码可写作如下：</p>
+<pre><code>&gt;&gt;&gt; &apos;\u4e2d\u6587&apos;
+&apos;中文&apos;
+</code></pre><p>Python中，字符串类型为str，在内存中以Unicode编码存在，其一个字符对应若干个字节。如果要在网络上传输，或者保存到磁盘，需要把str变为以字节为单位的bytes。Python对bytes类型的数据用带b前缀的单引号或双引号表示：</p>
+<pre><code>x = b&apos;ABC&apos;
+</code></pre><p>‘ABC’与b’ABC’的区别：前者为str，后者为bytes，显示内容一样，但bytes的每个字符只占用一个字节。<br>以Unicode表示的str通过encode()方法可以编码为指定的bytes，如：</p>
+<pre><code>&gt;&gt;&gt; &apos;Python&apos;.encode(&apos;ascii&apos;)
+b&apos;Python&apos;
+&gt;&gt;&gt; &apos;中国&apos;.encode(&apos;utf-8&apos;)
+b&apos;\xe4\xb8\xad\xe5\x9b\xbd&apos;
+&gt;&gt;&gt; &apos;Python&apos;.encode(&apos;utf-8&apos;)
+b&apos;Python&apos;
+&gt;&gt;&gt; &apos;中国&apos;.encode(&apos;ascii&apos;)
+Traceback (most recent call last):
+File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+UnicodeEncodeError: &apos;ascii&apos; codec can&apos;t encode characters in position 0-1:      or    dinal not in range(128)
+</code></pre><p>可以看出，含有中文的str无法用ASCII编码，因为中文的编码范围超出了ASCII编码范围。<br>反过来，如果从网络或磁盘上读取字节流，那么读到的是bytes，要将其转变为str，用decode()方法：</p>
+<pre><code>&gt;&gt;&gt; b&apos;Python&apos;.decode(&apos;utf-8&apos;)
+&apos;Python&apos;
+&gt;&gt;&gt; b&apos;\xe4\xb8\xad\xe5\x9b\xbd&apos;.decode(&apos;utf-8&apos;)
+&apos;中国&apos;
+</code></pre><p>如果bytes中包含无法解码的字节，会报错：</p>
+<pre><code>&gt;&gt;&gt; b&apos;\xe4\xb8\xad\xe5&apos;.decode(&apos;utf-8&apos;)
+Traceback (most recent call last):
+File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+UnicodeDecodeError: &apos;utf-8&apos; codec can&apos;t decode byte 0xe5 in position 3:     unexpe    cted end of data
+</code></pre><p>如果bytes中只有一小部分无效字节，可以传入<em>errors=’ignore’</em>忽略错误字节：</p>
+<pre><code>&gt;&gt;&gt; b&apos;\xe4\xb8\xad\xe5&apos;.decode(&apos;utf-8&apos;, errors=&apos;ignore&apos;)
+&apos;中&apos;
+</code></pre><p>len()的使用：对于str，用来计算字符数，对于bytes，用来计算字节数：</p>
+<pre><code>&gt;&gt;&gt; len(&apos;Python&apos;)
+6
+&gt;&gt;&gt; len(&apos;中国&apos;)
+2
+&gt;&gt;&gt; len(&apos;Python&apos;.encode(&apos;utf-8&apos;))
+6
+&gt;&gt;&gt; len(&apos;中国&apos;.encode(&apos;utf-8&apos;))
+6
+</code></pre><p>可以看出，转换后，一个中文字符一般占用3个字节，一个英文字符只占用1个字节。<strong>在进行str与bytes的转换时，应当始终坚持使用UTF-8编码方式。</strong><br>特殊情况下，可能需要使用特殊编码，如：</p>
+<pre><code>&gt;&gt;&gt; &apos;中国&apos;.encode(&apos;gb2312&apos;)
+b&apos;\xd6\xd0\xb9\xfa&apos;
+</code></pre><p><em>GB2312编码：GB2312是国家制定的汉字编码标准,使用双子节进行编码。由6763个常用汉字和682个的非汉字字符组成，一个汉字两个字节。对于一些生僻字及古文，使用扩充后的GBK编码。</em></p>
 <p>在写Python源代码.py文件时，一般在开头写上：</p>
-<p>#！usr/bin/env python3</p>
-<h1 id="coding-utf-8"><a href="#coding-utf-8" class="headerlink" title="-- coding: utf-8 --"></a>-<em>- coding: utf-8 -</em>-</h1><p>第一行：对于Linux/OS X系统，提示系统这是一个Python可执行程序，对于Windows系统，会忽略该条注释<br>第二行：告诉Python解释器，按照UTF-8编码来读取源代码，否则源代码中的中文可能出现乱码</p>
+<pre><code>#！usr/bin/env python3
+# -*- coding: utf-8 -*-
+</code></pre><p>第一行：对于Linux/OS X系统，提示系统这是一个Python可执行程序，对于Windows系统，会忽略该条注释<br>第二行：告诉Python解释器，按照UTF-8编码来读取源代码，否则源代码中的中文可能出现乱码</p>
 
           
         
