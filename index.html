@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -85,6 +85,7 @@
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="DD5201314">
 <meta property="og:description" content="good good study, day day up!">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DD5201314">
 <meta name="twitter:description" content="good good study, day day up!">
@@ -103,7 +104,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -135,7 +136,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -184,7 +185,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
           </a>
         </li>
       
@@ -194,7 +195,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -204,7 +205,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
-            Archiv
+            归档
           </a>
         </li>
       
@@ -270,9 +271,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-19T09:27:27+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-19T09:27:27+08:00">
                 2018-02-19
               </time>
             
@@ -311,103 +312,15 @@
 
       
         
-          
-            <h1 id="位置参数"><a href="#位置参数" class="headerlink" title="位置参数"></a>位置参数</h1><p>调用函数时，传入的值按照参数的位置顺序依次赋给参数。</p>
-<h1 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h1><p>默认参数很有用，但是使用不当可能掉坑里，默认参数有个最大的坑，如下：</p>
-<pre><code>def add_end(L=[]):
-    L.append(&apos;End&apos;)
-    return L
-</code></pre><p>使用默认参数时，结果是正确的：</p>
-<pre><code>&gt;&gt;&gt;add_end()
-[&apos;End&apos;]
-</code></pre><p>但是，再次调用时，结果就不对了：</p>
-<pre><code>&gt;&gt;&gt;add_end()
-[&apos;End&apos;, &apos;End&apos;]
-&gt;&gt;&gt;add_end()
-[&apos;End&apos;, &apos;End&apos;, &apos;End&apos;]
-</code></pre><p><strong>原因：</strong>Python函数在定义时，默认参数<code>L</code>的值就被计算出来了，即<code>[]</code>，因为<code>L</code>也是一个变量，它指向对象<code>[]</code>，每次调用该函数，如果改变了<code>[]</code>的内容，则下次调用时，默认参数的内容就变了，不再是<code>[]</code>了。<br><strong>解决方案：</strong>使用None这个不变对象来实现</p>
-<pre><code>def add_end(L=None):
-    if L is None:
-        L = []
-    L.append(&apos;END&apos;)
-    return L
-无论怎么调用都不会出错：
-&gt;&gt;&gt;add_end()
-[&apos;End&apos;]
-&gt;&gt;&gt;add_end()
-[&apos;End&apos;]
-</code></pre><p>为什么要设计str、None这样的不变对象呢。不变对象一旦创建，对象内部的数据就不能修改，这样就减少了因为修改数据导致的错误，此外，由于对象不变，多任务环境下同时读取对象不需要加锁，同时读一点问题都没有。编写程序时，如果能设计一个不变对象，尽量设计成不变对象。</p>
-<h1 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h1><p>即传入的参数个数是可变的。以一个数学题为例，给定一组数字<code>a,b,c...</code>，计算<code>a&lt;sup&gt;2&lt;/sup&gt;+b&lt;sup&gt;2&lt;/sup&gt;+c&lt;sup&gt;2&lt;/sup&gt;+...</code><br>要定义出这个函数，我们必须确定输入的参数，由于参数个数不确定，可以想到把a,b,c作为一个list或tuple传进来，如下：</p>
-<pre><code>def calc(numbers):
-    sum = 0
-    for n in numbers:
-        sum = sum + n*n
-    return sum
-&gt;&gt;&gt;calc([1,2,3])
-14
-&gt;&gt;&gt;calc([])
-0
-</code></pre><p>利用可变参数，可变为如下：</p>
-<pre><code>def calc(*numbers):
-    sum = 0
-    for n in numbers:
-        sum = sum + n*n
-    return sum
-&gt;&gt;&gt;calc(1,2,3)
-14
-&gt;&gt;&gt;calc()
-0
-</code></pre><p>如有一已知的list或tuple，调用时前面加*号：</p>
-<pre><code>list1 = [1,2,3]
-&gt;&gt;&gt;calc(*list1)
-14
-</code></pre><h1 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h1><p>关键字参数允许传入0个或任意个含参数名的参数，这些关键字参数在函数内部自动组装为一个dict。<br>函数<code>person</code>除了必选参数<code>name</code>和<code>age</code>外，还接受关键字参数<code>kw</code>，在调用函数时，可以只传入必选参数，也可以传入任意个的关键字参数：</p>
-<pre><code>test.py:
-def person(name, age, **kw):
-    print(&apos;name:&apos;, name, &apos;age:&apos;, age, &apos;other:&apos;, kw)
-
-extra = {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos;: &apos;Engineer&apos;}
-person(&apos;Tom&apos;, 40)
-person(&apos;Jack&apos;, 25, city=&apos;Beijing&apos;, job = &apos;Engineer&apos;)
-person(&apos;Jack&apos;, 25, **extra)
-
-iTerm终端：
-&gt;&gt;&gt;python3 ~/python_test/test.py
-name: Tom age: 40 other: {}
-name: Jack age: 25 other: {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos;: &apos;Engineer&apos;}
-name: Jack age: 25 other: {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos;: &apos;Engineer&apos;}
-注意：kw获得的dict是extra的一份拷贝，对kw的改动不会影响到函数外地extra。
-</code></pre><p>关键字参数可以扩展函数功能，比如用在用户注册信息时，有些信息是必填项，有些信息是选填项。</p>
-<h1 id="命名关键字参数"><a href="#命名关键字参数" class="headerlink" title="命名关键字参数"></a>命名关键字参数</h1><p>对于关键字参数，函数调用者可以传入任意不受限制的关键字参数，至于到底传入了哪些，需要在函数内部进行检查：</p>
-<pre><code>test.py:
-def person(name, age, **kw):
-    if &apos;city&apos; in kw:
-        print(&quot;there is a &apos;city&apos; key&quot;)
-    if &apos;job&apos; in kw:
-        print(&quot;there is a &apos;job&apos; key&quot;)
-    print(&apos;name:&apos;, name, &apos;age:&apos;, age, &apos;other:&apos;, kw)
-
-extra = {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos;: &apos;Engineer&apos;}
-person(&apos;Tom&apos;, 40)
-person(&apos;Jack&apos;, 25, **extra)
-
-iTerm终端：
-&gt;&gt;&gt;python3 ~/python_test/test.py
-name: Tom age: 40 other: {}
-there is a &apos;city&apos; key
-there is a &apos;job&apos; key
-name: Jack age: 25 other: {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos;: &apos;Engineer&apos;}
-</code></pre><p>但是调用者仍然可以传入不受限制的关键字参数，如果要限制关键字参数的名字，就可以使用命名关键字参数，例如，只接收<code>city</code>和<code>job</code>作为关键字参数，则定义如下：</p>
-<pre><code>def person(name, age, *, city, job):
-    print(name, age, city, job)
-</code></pre><p>和关键字参数<code>**kw</code>不同，命名关键字参数需要一个特殊的分隔符<code>*</code>，<code>*</code>后面的参数视为命名关键字参数，其调用如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;person(<span class="string">'Jack'</span>, <span class="number">25</span>, city=<span class="string">'Beijing'</span>, job = <span class="string">'Engineer'</span>)</span><br><span class="line">Jack <span class="number">25</span> Beijing Engineer</span><br></pre></td></tr></table></figure></p>
-<p>如果函数定义中已经有一个可变参数，后面跟着的命名关键字参数就不再需要一个特殊的分隔符<code>*</code>了:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ~/python_testtest.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, \*args, city, job)</span>:</span></span><br><span class="line">    print(name, age, args, city, job)</span><br><span class="line">person(<span class="string">'Jack'</span>, <span class="number">24</span>, <span class="string">'Beijing'</span>, <span class="string">'Engineer'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>命名关键字参数必须传入参数名，这和位置参数不同，如果没有传入参数名，系统将报错:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;python3 ~/python_test/test.py</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"/Users/lijing/python_test/test.py"</span>, line <span class="number">4</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    person(<span class="string">'Jack'</span>, <span class="number">25</span>, <span class="string">'Beijing'</span>, <span class="string">'Engineer'</span>)</span><br><span class="line">TypeError: person() missing <span class="number">2</span> required keyword-only arguments: <span class="string">'city'</span> <span class="keyword">and</span> <span class="string">'job'</span></span><br></pre></td></tr></table></figure></p>
-<p>由于调用时缺少参数名<code>city</code>和<code>job</code>，python解释器把四个参数都视为了位置参数，但是person函数只接受<code>name</code>和<code>age</code>两个位置参数，因此报错。此外命名关键字参数还可以使用默认缺省值：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, *, city = <span class="string">'Beijing'</span>, job)</span>:</span></span><br><span class="line">    print(name, age, city, job)</span><br></pre></td></tr></table></figure></p>
-<p>调用时可以不传入<code>city</code>参数，使用默认值<code>&#39;Beijing&#39;</code><br><strong>注意：使用命名关键字时，要特别注意<code>*</code>的使用，没有可变参数时必须加一个<code>*</code>作为特殊分隔符，如果缺少<code>*</code>，python解释器将无法识别位置参数和命名关键字参数。</strong></p>
-<h1 id="参数组合"><a href="#参数组合" class="headerlink" title="参数组合"></a>参数组合</h1><p>在python中定义函数，可以用必选参数、默认参数、可变参数、关键字参数和命名关键字参数，这5种参数都可以组合使用，但注意参数定义顺序必须是必选参数、默认参数、可变参数、命名关键字参数、关键字参数：<br>函数在调用时，python解释器自动按照参数位置和参数名把对应的参数传进去，而且，通过一个tuple和dict，也可以调用该函数：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ~/python_testtest.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(a, b, c=<span class="number">0</span>, *args, **kw)</span>:</span></span><br><span class="line">    print(a, b, c, args, kw)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(a, b, c=<span class="number">0</span>, *, d, **kw)</span>:</span></span><br><span class="line">    print(a, b, c, d, kw)</span><br><span class="line">args = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">kw = &#123;<span class="string">'d'</span>:<span class="number">99</span>, <span class="string">'x'</span>:<span class="string">'#'</span>&#125;</span><br><span class="line"></span><br><span class="line">f1(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">f1(<span class="number">1</span>,<span class="number">2</span>,c=<span class="number">3</span>)</span><br><span class="line">f1(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'a'</span>,<span class="string">'b'</span>)</span><br><span class="line">f1(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'a'</span>,<span class="string">'b'</span>,x=<span class="number">99</span>)</span><br><span class="line">f2(<span class="number">1</span>,<span class="number">2</span>,d=<span class="number">99</span>,ext=<span class="keyword">None</span>)</span><br><span class="line">f1(*args, **kw)</span><br><span class="line">f2(*args, **kw)</span><br><span class="line"></span><br><span class="line"><span class="comment">#iTerm2终端:</span></span><br><span class="line">&gt;&gt;&gt;python3 ~/python_test/test.py</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">0</span> () &#123;&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> () &#123;&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> (<span class="string">'a'</span>, <span class="string">'b'</span>) &#123;&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> (<span class="string">'a'</span>, <span class="string">'b'</span>) &#123;<span class="string">'x'</span>: <span class="number">99</span>&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">0</span> <span class="number">99</span> &#123;<span class="string">'ext'</span>: <span class="keyword">None</span>&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> () &#123;<span class="string">'d'</span>: <span class="number">99</span>, <span class="string">'x'</span>: <span class="string">'#'</span>&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">99</span> &#123;<span class="string">'x'</span>: <span class="string">'#'</span>&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
+          <h1 id="1-位置参数"><a href="#1-位置参数" class="headerlink" title="1.位置参数"></a>1.位置参数</h1><p>调用函数时，传入的值按照参数的位置顺序依次赋给参数。</p>
+<h1 id="2-默认参数"><a href="#2-默认参数" class="headerlink" title="2.默认参数"></a>2.默认参数</h1><p>默认参数很有用，但是使用不当可能掉坑里，默认参数有个最大的坑，如下：<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/19/Python学习笔记-六-函数的参数/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -483,9 +396,9 @@ name: Jack age: 25 other: {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T21:44:15+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-18T21:44:15+08:00">
                 2018-02-18
               </time>
             
@@ -524,30 +437,18 @@ name: Jack age: 25 other: {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos
 
       
         
-          
-            <h1 id="instance-的用法"><a href="#instance-的用法" class="headerlink" title="instance()的用法"></a>instance()的用法</h1><hr>
+          <h1 id="instance-的用法"><a href="#instance-的用法" class="headerlink" title="instance()的用法"></a>instance()的用法</h1><hr>
 <p>语法：</p>
 <pre><code>instance(object, classinfo)
-</code></pre><p>其中，object是变量，classinfo是类型(int/float/bool/list/tuple/dict/set)和类(class)，如果object是classinfo类的一个实例或是classinfo类的子类的一个实例，则返回Ture，否则返回False。如果classinfo不是一种数据类型或有数据类型构成的元组，将引发一个TypeError异常。</p>
-<h2 id="type-也可以判断对象类型，但是不能判断class类的子类对象类型。"><a href="#type-也可以判断对象类型，但是不能判断class类的子类对象类型。" class="headerlink" title="type()也可以判断对象类型，但是不能判断class类的子类对象类型。"></a>type()也可以判断对象类型，但是不能判断class类的子类对象类型。</h2><p>例子：函数my_abs()</p>
-<pre><code>def my_abs(x):
-if not isinstance(x, (int, float)):
-    raise TypeError(&apos;bad operand type&apos;)
-if x &gt;=0:
-    return x
-else:
-    return -x
-
-
-&gt;&gt;&gt;my_abs(&apos;a&apos;)
-Traceback (most recent call last):
-File &quot;/Users/lijing/python_test/test.py&quot;, line 10, in &lt;module&gt;
-p = my_abs(&apos;a&apos;)
-File &quot;/Users/lijing/python_test/test.py&quot;, line 4, in my_abs
-raise TypeError(&apos;bad operand type&apos;)
-TypeError: bad operand type
-</code></pre>
-          
+</code></pre><p>其中，object是变量，classinfo是类型(int/float/bool/list/tuple/dict/set)和类(class)，如果object是classinfo类的一个实例或是classinfo类的子类的一个实例，则返回Ture，否则返回False。如果classinfo不是一种数据类型或有数据类型构成的元组，将引发一个TypeError异常。<br>type()也可以判断对象类型，但是不能判断class类的子类对象类型。</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/18/Python学习笔记-五-函数参数类型检查/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -623,9 +524,9 @@ TypeError: bad operand type
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T21:43:39+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-18T21:43:39+08:00">
                 2018-02-18
               </time>
             
@@ -664,120 +565,14 @@ TypeError: bad operand type
 
       
         
-          
-            <h1 id="4种特殊数据类型"><a href="#4种特殊数据类型" class="headerlink" title="4种特殊数据类型"></a>4种特殊数据类型</h1><hr>
-<p>###1. 列表（list）<br>有序集合，可增删改查:</p>
-<pre><code>&gt;&gt;&gt; classmates = [&apos;Jack&apos;, &apos;Lucy&apos;, &apos;Tom&apos;]
-&gt;&gt;&gt; classmates
-[&apos;Jack&apos;, &apos;Lucy&apos;, &apos;Tom&apos;]
-</code></pre><p><strong>·增：</strong><br>append()方法与insert()方法</p>
-<pre><code>#末尾添加
-&gt;&gt;&gt; classmates.append(&apos;Bob&apos;)
-&gt;&gt;&gt; classmates
-[&apos;Jack&apos;, &apos;Lucy&apos;, &apos;Tom&apos;, &apos;Bob&apos;]
-#指定位置插入
-&gt;&gt;&gt; classmates.insert(2,&apos;Michel&apos;)
-&gt;&gt;&gt; classmates
-[&apos;Jack&apos;, &apos;Lucy&apos;, &apos;Michel&apos;, &apos;Tom&apos;, &apos;Bob&apos;]
-</code></pre><p><strong>·删：</strong><br>pop()方法</p>
-<pre><code>#末尾删除
-&gt;&gt;&gt; classmates.pop()
-&apos;Bob&apos;
-&gt;&gt;&gt; classmates
-[&apos;Jack&apos;, &apos;Lucy&apos;, &apos;Michel&apos;, &apos;Tom&apos;]
-#指定位置删除
-&gt;&gt;&gt; classmates.pop(2)
-&apos;Michel&apos;
-&gt;&gt;&gt; classmates
-[&apos;Jack&apos;, &apos;Lucy&apos;, &apos;Tom&apos;]
-</code></pre><p><strong>·改：</strong><br>直接赋值</p>
-<pre><code>&gt;&gt;&gt; classmates[1]=&apos;Bob&apos;
-&gt;&gt;&gt; classmates
-[&apos;Jack&apos;, &apos;Bob&apos;, &apos;Tom&apos;]
-</code></pre><p><strong>·查：</strong><br>使用索引，list[0]表示第一个元素，list[-1]表示最后一个元素，list中有list元素可使用多重索引</p>
-<pre><code>&gt;&gt;&gt; num = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,[&apos;d&apos;, &apos;e&apos;], &apos;f&apos;]
-&gt;&gt;&gt; num
-[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, [&apos;d&apos;, &apos;e&apos;], &apos;f&apos;]
-&gt;&gt;&gt; num[0]
-&apos;a&apos;
-&gt;&gt;&gt; num[-2]
-[&apos;d&apos;, &apos;e&apos;]
-&gt;&gt;&gt; num[0:-1]
-[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, [&apos;d&apos;, &apos;e&apos;]]
-&gt;&gt;&gt; num[-2][1]
-&apos;e&apos;
-#num有5个元素，其中num[3]是一个list
-&gt;&gt;&gt;len(num) 
-5
-</code></pre><hr>
-<p>###2. 元组（tuple）<br>tuple是有序列表，与list很像，但是tuple一旦初始化就不能修改，只能查找,索引方式与list相同</p>
-<pre><code>&gt;&gt;&gt; t = (1, 2, &apos;python&apos;)
-&gt;&gt;&gt; t
-(1, 2, &apos;python&apos;)
-&gt;&gt;&gt; t[0]
-1
-&gt;&gt;&gt; t[-1]
-&apos;python&apos;
-</code></pre><p><strong>·初始化只有一个元素的tuple</strong></p>
-<pre><code>&gt;&gt;&gt; t = (1, )
-&gt;&gt;&gt; t
-(1,)
-</code></pre><p><strong>·关于元素不可变</strong></p>
-<pre><code>&gt;&gt;&gt; t = (1, 2, [3, 4])
-&gt;&gt;&gt; t
-(1, 2, [3, 4])
-&gt;&gt;&gt; t[-1][0]=&apos;change&apos;
-&gt;&gt;&gt; t
-(1, 2, [&apos;change&apos;, 4])
-</code></pre><h2 id="这个tuple有三个元素，1，2，和一个list。表面看tuple变了，但其实不是tuple的元素变了，而是list的元素变了，tuple的指向并没有变，依然是原先的list。因此tuple元素不可变指的是“指向不变”，指向的对象不变，如果要创建一个内容也不变的tuple，就必须保证其每个元素本身也不能变。"><a href="#这个tuple有三个元素，1，2，和一个list。表面看tuple变了，但其实不是tuple的元素变了，而是list的元素变了，tuple的指向并没有变，依然是原先的list。因此tuple元素不可变指的是“指向不变”，指向的对象不变，如果要创建一个内容也不变的tuple，就必须保证其每个元素本身也不能变。" class="headerlink" title="######这个tuple有三个元素，1，2，和一个list。表面看tuple变了，但其实不是tuple的元素变了，而是list的元素变了，tuple的指向并没有变，依然是原先的list。因此tuple元素不可变指的是“指向不变”，指向的对象不变，如果要创建一个内容也不变的tuple，就必须保证其每个元素本身也不能变。"></a>######这个tuple有三个元素，1，2，和一个list。表面看tuple变了，但其实不是tuple的元素变了，而是list的元素变了，tuple的指向并没有变，依然是原先的list。因此tuple元素不可变指的是“指向不变”，指向的对象不变，如果要创建一个内容也不变的tuple，就必须保证其每个元素本身也不能变。</h2><p>###3. 字典（dict）<br>在其他语言中称为map，使用键-值(key-value)存储，具有极快的查找速度。与list比较，dict查找和插入速度快，不会随key的增加而变慢，需要占用的内存比list大很多，所以，dict是用空间来换取时间的一种方法。<br>dict是无序的，可进行增删改查</p>
-<pre><code>&gt;&gt;&gt; d = {&apos;Jack&apos;:95, &apos;Lucy&apos;:90, &apos;Tom&apos;:88}
-&gt;&gt;&gt; d
-{&apos;Jack&apos;: 95, &apos;Lucy&apos;: 90, &apos;Tom&apos;: 88}
-#增
-&gt;&gt;&gt; d[&apos;Bob&apos;]=99
-&gt;&gt;&gt; d
-{&apos;Jack&apos;: 95, &apos;Lucy&apos;: 100, &apos;Tom&apos;: 88, &apos;Bob&apos;: 99}
-#删
-&gt;&gt;&gt; d.pop(&apos;Bob&apos;)
-99
-&gt;&gt;&gt; d
-{&apos;Jack&apos;: 95, &apos;Lucy&apos;: 100, &apos;Tom&apos;: 88}
-#改
-&gt;&gt;&gt; d[&apos;Lucy&apos;]
-90
-&gt;&gt;&gt; d[&apos;Lucy&apos;]=100
-&gt;&gt;&gt; d[&apos;Lucy&apos;]
-100
-</code></pre><p>如果键不存在，dict会报错，避免报错，一是通过in判断key是否存在；而是使用get()方法，如果key不存在，了已返回None，或自己指定的value：</p>
-<pre><code>&gt;&gt;&gt; &apos;Jim&apos; in d
-False 
-&gt;&gt;&gt; d.get(&apos;Jim&apos;)
-&gt;&gt;&gt; d.get(&apos;Jim&apos;,&apos;false&apos;)
-&apos;false&apos;
-&gt;&gt;&gt; d.get(&apos;Jim&apos;,False)
-False
-</code></pre><hr>
-<p>###4. 集合（set）<br>set和dict类似，也是一组key的集合，但是不存储value，由于key不能重复，所以，set中没有重复的key，set可看做是数学意义上的无序和无重复元素的组合。要创建set，需要提供一个list作为输入集合：</p>
-<pre><code>&gt;&gt;&gt; s = set([1,2,3,3,2,1])
-&gt;&gt;&gt; s
-{1, 2, 3}
-&gt;&gt;&gt; s.add(4)
-&gt;&gt;&gt; s
-{1, 2, 3, 4}
-&gt;&gt;&gt; s.add(&apos;Python&apos;)
-&gt;&gt;&gt; s
-{1, 2, 3, 4, &apos;Python&apos;}
-&gt;&gt;&gt; s.remove(&apos;Python&apos;)
-&gt;&gt;&gt; s
-{1, 2, 3, 4}
-&gt;&gt;&gt; s1 = set([1,3,5,7])
-&gt;&gt;&gt; s&amp;s1
-{1, 3}
-&gt;&gt;&gt; s|s1
-{1, 2, 3, 4, 5, 7}
-</code></pre><p>set和dict一样，不可放入可变对s象，因为无法判断两个可变对象是否相等，也就无法保证set内部“不会有重复元素”.<br><strong>注意：str是不可变对象，list是可变对象</strong></p>
-
-          
+          <h1 id="4种特殊数据类型"><a href="#4种特殊数据类型" class="headerlink" title="4种特殊数据类型"></a>4种特殊数据类型</h1><h2 id=""><a href="#" class="headerlink" title=""></a>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/18/Python学习笔记-四-list、tuple、dict及set的比较/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -853,9 +648,9 @@ False
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T21:42:59+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-18T21:42:59+08:00">
                 2018-02-18
               </time>
             
@@ -894,65 +689,15 @@ False
 
       
         
-          
-            <h1 id="1-常用编码"><a href="#1-常用编码" class="headerlink" title="1. 常用编码"></a>1. 常用编码</h1><hr>
-<p>·ASCII：一个字节（没有汉字），<br>·Unicode：包含各国语言，通常是两个字节，如果用到特别生僻的字符，需要4个字节<br>·UTF-8：Unicode的变种，可变长编码，将一个Unicode字符根据大小编码成1-6个字节，常用英文字母1个字节，汉字通常3个字节，生僻字符4-6个字节</p>
-<p>很多网页源码：</p>
-<pre><code>&lt;meta charset=&quot;UTF-8&quot; /&gt;  :  表示采用的是UTF-8编码
-</code></pre><hr>
-<h1 id="2-Python字符串"><a href="#2-Python字符串" class="headerlink" title="2. Python字符串"></a>2. Python字符串</h1><p>在Python3中，字符串使用Unicode编码，即它支持多国语言。ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符：</p>
-<pre><code>&gt;&gt;&gt; ord(&apos;P&apos;)
-80
-&gt;&gt;&gt; chr(81)
-&apos;Q&apos;
-</code></pre><p>若知道字符整数编码可写作如下：</p>
-<pre><code>&gt;&gt;&gt; &apos;\u4e2d\u6587&apos;
-&apos;中文&apos;
-</code></pre><p>Python中，字符串类型为str，在内存中以Unicode编码存在，其一个字符对应若干个字节。如果要在网络上传输，或者保存到磁盘，需要把str变为以字节为单位的bytes。Python对bytes类型的数据用带b前缀的单引号或双引号表示：</p>
-<pre><code>x = b&apos;ABC&apos;
-</code></pre><p>‘ABC’与b’ABC’的区别：前者为str，后者为bytes，显示内容一样，但bytes的每个字符只占用一个字节。<br>以Unicode表示的str通过encode()方法可以编码为指定的bytes，如：</p>
-<pre><code>&gt;&gt;&gt; &apos;Python&apos;.encode(&apos;ascii&apos;)
-b&apos;Python&apos;
-&gt;&gt;&gt; &apos;中国&apos;.encode(&apos;utf-8&apos;)
-b&apos;\xe4\xb8\xad\xe5\x9b\xbd&apos;
-&gt;&gt;&gt; &apos;Python&apos;.encode(&apos;utf-8&apos;)
-b&apos;Python&apos;
-&gt;&gt;&gt; &apos;中国&apos;.encode(&apos;ascii&apos;)
-Traceback (most recent call last):
-File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-UnicodeEncodeError: &apos;ascii&apos; codec can&apos;t encode characters in position 0-1:      or    dinal not in range(128)
-</code></pre><p>可以看出，含有中文的str无法用ASCII编码，因为中文的编码范围超出了ASCII编码范围。<br>反过来，如果从网络或磁盘上读取字节流，那么读到的是bytes，要将其转变为str，用decode()方法：</p>
-<pre><code>&gt;&gt;&gt; b&apos;Python&apos;.decode(&apos;utf-8&apos;)
-&apos;Python&apos;
-&gt;&gt;&gt; b&apos;\xe4\xb8\xad\xe5\x9b\xbd&apos;.decode(&apos;utf-8&apos;)
-&apos;中国&apos;
-</code></pre><p>如果bytes中包含无法解码的字节，会报错：</p>
-<pre><code>&gt;&gt;&gt; b&apos;\xe4\xb8\xad\xe5&apos;.decode(&apos;utf-8&apos;)
-Traceback (most recent call last):
-File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-UnicodeDecodeError: &apos;utf-8&apos; codec can&apos;t decode byte 0xe5 in position 3:     unexpe    cted end of data
-</code></pre><p>如果bytes中只有一小部分无效字节，可以传入<em>errors=’ignore’</em>忽略错误字节：</p>
-<pre><code>&gt;&gt;&gt; b&apos;\xe4\xb8\xad\xe5&apos;.decode(&apos;utf-8&apos;, errors=&apos;ignore&apos;)
-&apos;中&apos;
-</code></pre><p>len()的使用：对于str，用来计算字符数，对于bytes，用来计算字节数：</p>
-<pre><code>&gt;&gt;&gt; len(&apos;Python&apos;)
-6
-&gt;&gt;&gt; len(&apos;中国&apos;)
-2
-&gt;&gt;&gt; len(&apos;Python&apos;.encode(&apos;utf-8&apos;))
-6
-&gt;&gt;&gt; len(&apos;中国&apos;.encode(&apos;utf-8&apos;))
-6
-</code></pre><p>可以看出，转换后，一个中文字符一般占用3个字节，一个英文字符只占用1个字节。<strong>在进行str与bytes的转换时，应当始终坚持使用UTF-8编码方式。</strong><br>特殊情况下，可能需要使用特殊编码，如：</p>
-<pre><code>&gt;&gt;&gt; &apos;中国&apos;.encode(&apos;gb2312&apos;)
-b&apos;\xd6\xd0\xb9\xfa&apos;
-</code></pre><p><em>GB2312编码：GB2312是国家制定的汉字编码标准,使用双子节进行编码。由6763个常用汉字和682个的非汉字字符组成，一个汉字两个字节。对于一些生僻字及古文，使用扩充后的GBK编码。</em></p>
-<p>在写Python源代码.py文件时，一般在开头写上：</p>
-<pre><code>#！usr/bin/env python3
-# -*- coding: utf-8 -*-
-</code></pre><p>第一行：对于Linux/OS X系统，提示系统这是一个Python可执行程序，对于Windows系统，会忽略该条注释<br>第二行：告诉Python解释器，按照UTF-8编码来读取源代码，否则源代码中的中文可能出现乱码</p>
-
-          
+          <h1 id="1-常用编码"><a href="#1-常用编码" class="headerlink" title="1.常用编码"></a>1.常用编码</h1><hr>
+<p>·ASCII：一个字节（没有汉字），<br>·Unicode：包含各国语言，通常是两个字节，如果用到特别生僻的字符，需要4个字节<br>·UTF-8：Unicode的变种，可变长编码，将一个Unicode字符根据大小编码成1-6个字节，常用英文字母1个字节，汉字通常3个字节，生僻字符4-6个字节<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/18/Python学习笔记-三-字符编码/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1028,9 +773,9 @@ b&apos;\xd6\xd0\xb9\xfa&apos;
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T21:42:39+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-18T21:42:39+08:00">
                 2018-02-18
               </time>
             
@@ -1069,19 +814,14 @@ b&apos;\xd6\xd0\xb9\xfa&apos;
 
       
         
-          
-            <h4 id="传统除法（‘-‘）、真除法、floor除法（‘-‘）"><a href="#传统除法（‘-‘）、真除法、floor除法（‘-‘）" class="headerlink" title="传统除法（‘ /‘）、真除法、floor除法（‘ // ‘）"></a>传统除法（<em>‘ /‘</em>）、真除法、floor除法（<em>‘ // ‘</em>）</h4><hr>
-<pre><code>x/y
-</code></pre><p>·传统除法和真除法：在Python2.7之前，对整数操作，结果有小数的会舍去小数部分，只保留整数部分，对浮点数操作会保留小数部分。在Python3中，传统除法都被转换为真除法（即无论如何结果均会保留小数部分）。</p>
-<pre><code>x//y
-</code></pre><p>·floor除法：其实就是floor(x/y),传统除法结果向下取整，返回结果永远是整数。<br>例如：<br><img src="http://upload-images.jianshu.io/upload_images/5640632-c05cd8975ca5b011.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="几种除法比较.png"></p>
-<p>注意<em>‘import math’</em>，math中常用函数：</p>
-<pre><code>floor():向下取整函数
-ceil():向上取整函数
-trunc():截断函数（只保留整数部分）
-</code></pre><p><strong>注：整数的运算结果是精确的</strong></p>
-
-          
+          <h1 id="传统除法（‘-‘）、真除法、floor除法（‘-‘）"><a href="#传统除法（‘-‘）、真除法、floor除法（‘-‘）" class="headerlink" title="传统除法（‘ /‘）、真除法、floor除法（‘ // ‘）"></a>传统除法（<em>‘ /‘</em>）、真除法、floor除法（<em>‘ // ‘</em>）</h1><hr>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/18/Python学习笔记-二-几种除法的比较/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1157,9 +897,9 @@ trunc():截断函数（只保留整数部分）
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T21:25:01+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-18T21:25:01+08:00">
                 2018-02-18
               </time>
             
@@ -1198,35 +938,17 @@ trunc():截断函数（只保留整数部分）
 
       
         
-          
-            <h1 id="1-整数"><a href="#1-整数" class="headerlink" title="1. 整数"></a>1. 整数</h1><p>可直接使用十进制，也可使用十六进制表示，如:</p>
+          <h1 id="1-整数"><a href="#1-整数" class="headerlink" title="1.整数"></a>1.整数</h1><p>可直接使用十进制，也可使用十六进制表示，如:</p>
 <pre><code>&gt;&gt;&gt;print(0xff)
 255
-</code></pre><h1 id="2-浮点数"><a href="#2-浮点数" class="headerlink" title="2. 浮点数"></a>2. 浮点数</h1><p>对于小数点比较大的浮点数，如1.45x10<sup>10</sup>，使用如下表示方式：</p>
-<pre><code>f = 1.45e10
-</code></pre><h1 id="3-字符串"><a href="#3-字符串" class="headerlink" title="3. 字符串"></a>3. 字符串</h1><p>主要是print的表示方式，有三种，分别是:<br>·单引号：’ ‘（字符串中使用 ‘ 等特殊字符时，必须使用转义字符 “\” ）<br>·双引号：” “（字符串中使用 ‘ 时,可不用转义字符 “\” ,直接输出）<br>·三引号：’’’ ‘’’（可以进行多行输出）</p>
-<pre><code>&gt;&gt;&gt; print(&apos;There\&apos;s a tab here:\t!&apos;)
-There&apos;s a tab here:    !
-&gt;&gt;&gt; print(&quot;There&apos;s a tab here:\t!&quot;)
-There&apos;s a tab here:    !
-&gt;&gt;&gt; print(&apos;&apos;&apos;line1
-... line2
-... line3&apos;&apos;&apos;)
-line1
-line2
-line3
-</code></pre><p>字符串中转义字符过多时，可使用<em>r’ ‘</em>，其中<em>‘ ‘</em>中间的部分不会进行转义处理，如：</p>
-<pre><code>&gt;&gt;&gt; print(r&apos;\&apos;\t&apos;)
-\&apos;\t
-</code></pre><p>同理，也有<em>r’’’ ‘’’</em>的写法，其中<em>‘’’ ‘’’</em>中的部分依然不会进行转义处理，如：</p>
-<pre><code>&gt;&gt;&gt; print(r&apos;&apos;&apos;good job!\n
-... keep on!&apos;&apos;&apos;)
-good job!\n
-keep on!
-</code></pre><p>#4. 布尔值<br>True和false，没有更特别的地方</p>
-<p>#5. 空值<br>空值是python里的一个特殊值，用<em>None</em>表示</p>
-
-          
+</code></pre>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/18/Python学习笔记-一-基本数据类型/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1302,9 +1024,9 @@ keep on!
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-16T10:47:42+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-16T10:47:42+08:00">
                 2018-02-16
               </time>
             
@@ -1435,7 +1157,7 @@ keep on!
                 <a href="/archives">
               
                   <span class="site-state-item-count">7</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -1448,7 +1170,7 @@ keep on!
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">标签</span>
                 </a>
               </div>
             
@@ -1494,7 +1216,7 @@ keep on!
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -1502,7 +1224,7 @@ keep on!
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 

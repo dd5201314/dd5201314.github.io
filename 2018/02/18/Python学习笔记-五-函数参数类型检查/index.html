@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -86,7 +86,8 @@
 <meta property="og:url" content="http://yoursite.com/2018/02/18/Python学习笔记-五-函数参数类型检查/index.html">
 <meta property="og:site_name" content="DD5201314">
 <meta property="og:description" content="instance()的用法 语法： instance(object, classinfo) 其中，object是变量，classinfo是类型(int/float/bool/list/tuple/dict/set)和类(class)，如果object是classinfo类的一个实例或是classinfo类的子类的一个实例，则返回Ture，否则返回False。如果classinfo不是一种数据类型或">
-<meta property="og:updated_time" content="2018-02-18T16:12:44.451Z">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-21T12:52:05.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习笔记(五)函数参数类型检查">
 <meta name="twitter:description" content="instance()的用法 语法： instance(object, classinfo) 其中，object是变量，classinfo是类型(int/float/bool/list/tuple/dict/set)和类(class)，如果object是classinfo类的一个实例或是classinfo类的子类的一个实例，则返回Ture，否则返回False。如果classinfo不是一种数据类型或">
@@ -105,7 +106,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -137,7 +138,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -185,7 +186,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
           </a>
         </li>
       
@@ -195,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -205,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
-            Archiv
+            归档
           </a>
         </li>
       
@@ -269,9 +270,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T21:44:15+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-18T21:44:15+08:00">
                 2018-02-18
               </time>
             
@@ -312,8 +313,8 @@
         <h1 id="instance-的用法"><a href="#instance-的用法" class="headerlink" title="instance()的用法"></a>instance()的用法</h1><hr>
 <p>语法：</p>
 <pre><code>instance(object, classinfo)
-</code></pre><p>其中，object是变量，classinfo是类型(int/float/bool/list/tuple/dict/set)和类(class)，如果object是classinfo类的一个实例或是classinfo类的子类的一个实例，则返回Ture，否则返回False。如果classinfo不是一种数据类型或有数据类型构成的元组，将引发一个TypeError异常。</p>
-<h2 id="type-也可以判断对象类型，但是不能判断class类的子类对象类型。"><a href="#type-也可以判断对象类型，但是不能判断class类的子类对象类型。" class="headerlink" title="type()也可以判断对象类型，但是不能判断class类的子类对象类型。"></a>type()也可以判断对象类型，但是不能判断class类的子类对象类型。</h2><p>例子：函数my_abs()</p>
+</code></pre><p>其中，object是变量，classinfo是类型(int/float/bool/list/tuple/dict/set)和类(class)，如果object是classinfo类的一个实例或是classinfo类的子类的一个实例，则返回Ture，否则返回False。如果classinfo不是一种数据类型或有数据类型构成的元组，将引发一个TypeError异常。<br>type()也可以判断对象类型，但是不能判断class类的子类对象类型。</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>例子：函数my_abs()</p>
 <pre><code>def my_abs(x):
 if not isinstance(x, (int, float)):
     raise TypeError(&apos;bad operand type&apos;)
@@ -428,10 +429,10 @@ TypeError: bad operand type
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            站点概览
           </li>
         </ul>
       
@@ -452,7 +453,7 @@ TypeError: bad operand type
                 <a href="/archives">
               
                   <span class="site-state-item-count">7</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -465,7 +466,7 @@ TypeError: bad operand type
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">标签</span>
                 </a>
               </div>
             
@@ -497,7 +498,7 @@ TypeError: bad operand type
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#instance-的用法"><span class="nav-number">1.</span> <span class="nav-text">instance()的用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#type-也可以判断对象类型，但是不能判断class类的子类对象类型。"><span class="nav-number">1.1.</span> <span class="nav-text">type()也可以判断对象类型，但是不能判断class类的子类对象类型。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#instance-的用法"><span class="nav-number">1.</span> <span class="nav-text">instance()的用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.1.</span> <span class="nav-text"></span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -527,7 +528,7 @@ TypeError: bad operand type
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -535,7 +536,7 @@ TypeError: bad operand type
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 

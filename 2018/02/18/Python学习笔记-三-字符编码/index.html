@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="1. 常用编码 ·ASCII：一个字节（没有汉字），·Unicode：包含各国语言，通常是两个字节，如果用到特别生僻的字符，需要4个字节·UTF-8：Unicode的变种，可变长编码，将一个Unicode字符根据大小编码成1-6个字节，常用英文字母1个字节，汉字通常3个字节，生僻字符4-6个字节 很多网页源码： &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot; /&amp;gt;  :">
+<meta name="description" content="1.常用编码 ·ASCII：一个字节（没有汉字），·Unicode：包含各国语言，通常是两个字节，如果用到特别生僻的字符，需要4个字节·UTF-8：Unicode的变种，可变长编码，将一个Unicode字符根据大小编码成1-6个字节，常用英文字母1个字节，汉字通常3个字节，生僻字符4-6个字节">
 <meta name="keywords" content="Python,字符编码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python学习笔记(三)字符编码">
 <meta property="og:url" content="http://yoursite.com/2018/02/18/Python学习笔记-三-字符编码/index.html">
 <meta property="og:site_name" content="DD5201314">
-<meta property="og:description" content="1. 常用编码 ·ASCII：一个字节（没有汉字），·Unicode：包含各国语言，通常是两个字节，如果用到特别生僻的字符，需要4个字节·UTF-8：Unicode的变种，可变长编码，将一个Unicode字符根据大小编码成1-6个字节，常用英文字母1个字节，汉字通常3个字节，生僻字符4-6个字节 很多网页源码： &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot; /&amp;gt;  :">
-<meta property="og:updated_time" content="2018-02-18T16:26:58.696Z">
+<meta property="og:description" content="1.常用编码 ·ASCII：一个字节（没有汉字），·Unicode：包含各国语言，通常是两个字节，如果用到特别生僻的字符，需要4个字节·UTF-8：Unicode的变种，可变长编码，将一个Unicode字符根据大小编码成1-6个字节，常用英文字母1个字节，汉字通常3个字节，生僻字符4-6个字节">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-21T12:55:04.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习笔记(三)字符编码">
-<meta name="twitter:description" content="1. 常用编码 ·ASCII：一个字节（没有汉字），·Unicode：包含各国语言，通常是两个字节，如果用到特别生僻的字符，需要4个字节·UTF-8：Unicode的变种，可变长编码，将一个Unicode字符根据大小编码成1-6个字节，常用英文字母1个字节，汉字通常3个字节，生僻字符4-6个字节 很多网页源码： &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot; /&amp;gt;  :">
+<meta name="twitter:description" content="1.常用编码 ·ASCII：一个字节（没有汉字），·Unicode：包含各国语言，通常是两个字节，如果用到特别生僻的字符，需要4个字节·UTF-8：Unicode的变种，可变长编码，将一个Unicode字符根据大小编码成1-6个字节，常用英文字母1个字节，汉字通常3个字节，生僻字符4-6个字节">
 
 
 
@@ -105,7 +106,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -137,7 +138,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -185,7 +186,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
           </a>
         </li>
       
@@ -195,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -205,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
-            Archiv
+            归档
           </a>
         </li>
       
@@ -269,9 +270,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T21:42:59+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-18T21:42:59+08:00">
                 2018-02-18
               </time>
             
@@ -309,12 +310,12 @@
       
 
       
-        <h1 id="1-常用编码"><a href="#1-常用编码" class="headerlink" title="1. 常用编码"></a>1. 常用编码</h1><hr>
-<p>·ASCII：一个字节（没有汉字），<br>·Unicode：包含各国语言，通常是两个字节，如果用到特别生僻的字符，需要4个字节<br>·UTF-8：Unicode的变种，可变长编码，将一个Unicode字符根据大小编码成1-6个字节，常用英文字母1个字节，汉字通常3个字节，生僻字符4-6个字节</p>
+        <h1 id="1-常用编码"><a href="#1-常用编码" class="headerlink" title="1.常用编码"></a>1.常用编码</h1><hr>
+<p>·ASCII：一个字节（没有汉字），<br>·Unicode：包含各国语言，通常是两个字节，如果用到特别生僻的字符，需要4个字节<br>·UTF-8：Unicode的变种，可变长编码，将一个Unicode字符根据大小编码成1-6个字节，常用英文字母1个字节，汉字通常3个字节，生僻字符4-6个字节<br><a id="more"></a></p>
 <p>很多网页源码：</p>
 <pre><code>&lt;meta charset=&quot;UTF-8&quot; /&gt;  :  表示采用的是UTF-8编码
 </code></pre><hr>
-<h1 id="2-Python字符串"><a href="#2-Python字符串" class="headerlink" title="2. Python字符串"></a>2. Python字符串</h1><p>在Python3中，字符串使用Unicode编码，即它支持多国语言。ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符：</p>
+<h1 id="2-Python字符串"><a href="#2-Python字符串" class="headerlink" title="2.Python字符串"></a>2.Python字符串</h1><p>在Python3中，字符串使用Unicode编码，即它支持多国语言。ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符：</p>
 <pre><code>&gt;&gt;&gt; ord(&apos;P&apos;)
 80
 &gt;&gt;&gt; chr(81)
@@ -463,10 +464,10 @@ b&apos;\xd6\xd0\xb9\xfa&apos;
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            站点概览
           </li>
         </ul>
       
@@ -487,7 +488,7 @@ b&apos;\xd6\xd0\xb9\xfa&apos;
                 <a href="/archives">
               
                   <span class="site-state-item-count">7</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -500,7 +501,7 @@ b&apos;\xd6\xd0\xb9\xfa&apos;
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">标签</span>
                 </a>
               </div>
             
@@ -532,7 +533,7 @@ b&apos;\xd6\xd0\xb9\xfa&apos;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-常用编码"><span class="nav-number">1.</span> <span class="nav-text">1. 常用编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Python字符串"><span class="nav-number">2.</span> <span class="nav-text">2. Python字符串</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-常用编码"><span class="nav-number">1.</span> <span class="nav-text">1.常用编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Python字符串"><span class="nav-number">2.</span> <span class="nav-text">2.Python字符串</span></a></li></ol></div>
             
 
           </div>
@@ -562,7 +563,7 @@ b&apos;\xd6\xd0\xb9\xfa&apos;
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -570,7 +571,7 @@ b&apos;\xd6\xd0\xb9\xfa&apos;
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 

@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="位置参数调用函数时，传入的值按照参数的位置顺序依次赋给参数。 默认参数默认参数很有用，但是使用不当可能掉坑里，默认参数有个最大的坑，如下： def add_end(L=[]):     L.append(&amp;apos;End&amp;apos;)     return L 使用默认参数时，结果是正确的： &amp;gt;&amp;gt;&amp;gt;add_end() [&amp;apos;End&amp;apos;] 但是，再次调用时，结果就">
+<meta name="description" content="1.位置参数调用函数时，传入的值按照参数的位置顺序依次赋给参数。 2.默认参数默认参数很有用，但是使用不当可能掉坑里，默认参数有个最大的坑，如下：">
 <meta name="keywords" content="Python,函数的参数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python学习笔记(六)函数的参数">
 <meta property="og:url" content="http://yoursite.com/2018/02/19/Python学习笔记-六-函数的参数/index.html">
 <meta property="og:site_name" content="DD5201314">
-<meta property="og:description" content="位置参数调用函数时，传入的值按照参数的位置顺序依次赋给参数。 默认参数默认参数很有用，但是使用不当可能掉坑里，默认参数有个最大的坑，如下： def add_end(L=[]):     L.append(&amp;apos;End&amp;apos;)     return L 使用默认参数时，结果是正确的： &amp;gt;&amp;gt;&amp;gt;add_end() [&amp;apos;End&amp;apos;] 但是，再次调用时，结果就">
-<meta property="og:updated_time" content="2018-02-21T09:33:34.741Z">
+<meta property="og:description" content="1.位置参数调用函数时，传入的值按照参数的位置顺序依次赋给参数。 2.默认参数默认参数很有用，但是使用不当可能掉坑里，默认参数有个最大的坑，如下：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-21T12:56:14.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习笔记(六)函数的参数">
-<meta name="twitter:description" content="位置参数调用函数时，传入的值按照参数的位置顺序依次赋给参数。 默认参数默认参数很有用，但是使用不当可能掉坑里，默认参数有个最大的坑，如下： def add_end(L=[]):     L.append(&amp;apos;End&amp;apos;)     return L 使用默认参数时，结果是正确的： &amp;gt;&amp;gt;&amp;gt;add_end() [&amp;apos;End&amp;apos;] 但是，再次调用时，结果就">
+<meta name="twitter:description" content="1.位置参数调用函数时，传入的值按照参数的位置顺序依次赋给参数。 2.默认参数默认参数很有用，但是使用不当可能掉坑里，默认参数有个最大的坑，如下：">
 
 
 
@@ -105,7 +106,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -137,7 +138,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -185,7 +186,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
           </a>
         </li>
       
@@ -195,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -205,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
-            Archiv
+            归档
           </a>
         </li>
       
@@ -269,9 +270,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-19T09:27:27+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-19T09:27:27+08:00">
                 2018-02-19
               </time>
             
@@ -309,12 +310,8 @@
       
 
       
-        <h1 id="位置参数"><a href="#位置参数" class="headerlink" title="位置参数"></a>位置参数</h1><p>调用函数时，传入的值按照参数的位置顺序依次赋给参数。</p>
-<h1 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h1><p>默认参数很有用，但是使用不当可能掉坑里，默认参数有个最大的坑，如下：</p>
-<pre><code>def add_end(L=[]):
-    L.append(&apos;End&apos;)
-    return L
-</code></pre><p>使用默认参数时，结果是正确的：</p>
+        <h1 id="1-位置参数"><a href="#1-位置参数" class="headerlink" title="1.位置参数"></a>1.位置参数</h1><p>调用函数时，传入的值按照参数的位置顺序依次赋给参数。</p>
+<h1 id="2-默认参数"><a href="#2-默认参数" class="headerlink" title="2.默认参数"></a>2.默认参数</h1><p>默认参数很有用，但是使用不当可能掉坑里，默认参数有个最大的坑，如下：<br><a id="more"></a><br>    def add_end(L=[]):<br>        L.append(‘End’)<br>        return L<br>使用默认参数时，结果是正确的：</p>
 <pre><code>&gt;&gt;&gt;add_end()
 [&apos;End&apos;]
 </code></pre><p>但是，再次调用时，结果就不对了：</p>
@@ -334,7 +331,7 @@
 &gt;&gt;&gt;add_end()
 [&apos;End&apos;]
 </code></pre><p>为什么要设计str、None这样的不变对象呢。不变对象一旦创建，对象内部的数据就不能修改，这样就减少了因为修改数据导致的错误，此外，由于对象不变，多任务环境下同时读取对象不需要加锁，同时读一点问题都没有。编写程序时，如果能设计一个不变对象，尽量设计成不变对象。</p>
-<h1 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h1><p>即传入的参数个数是可变的。以一个数学题为例，给定一组数字<code>a,b,c...</code>，计算<code>a&lt;sup&gt;2&lt;/sup&gt;+b&lt;sup&gt;2&lt;/sup&gt;+c&lt;sup&gt;2&lt;/sup&gt;+...</code><br>要定义出这个函数，我们必须确定输入的参数，由于参数个数不确定，可以想到把a,b,c作为一个list或tuple传进来，如下：</p>
+<h1 id="3-可变参数"><a href="#3-可变参数" class="headerlink" title="3.可变参数"></a>3.可变参数</h1><p>即传入的参数个数是可变的。以一个数学题为例，给定一组数字<code>a,b,c...</code>，计算<code>a&lt;sup&gt;2&lt;/sup&gt;+b&lt;sup&gt;2&lt;/sup&gt;+c&lt;sup&gt;2&lt;/sup&gt;+...</code><br>要定义出这个函数，我们必须确定输入的参数，由于参数个数不确定，可以想到把a,b,c作为一个list或tuple传进来，如下：</p>
 <pre><code>def calc(numbers):
     sum = 0
     for n in numbers:
@@ -358,7 +355,7 @@
 <pre><code>list1 = [1,2,3]
 &gt;&gt;&gt;calc(*list1)
 14
-</code></pre><h1 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h1><p>关键字参数允许传入0个或任意个含参数名的参数，这些关键字参数在函数内部自动组装为一个dict。<br>函数<code>person</code>除了必选参数<code>name</code>和<code>age</code>外，还接受关键字参数<code>kw</code>，在调用函数时，可以只传入必选参数，也可以传入任意个的关键字参数：</p>
+</code></pre><h1 id="4-关键字参数"><a href="#4-关键字参数" class="headerlink" title="4.关键字参数"></a>4.关键字参数</h1><p>关键字参数允许传入0个或任意个含参数名的参数，这些关键字参数在函数内部自动组装为一个dict。<br>函数<code>person</code>除了必选参数<code>name</code>和<code>age</code>外，还接受关键字参数<code>kw</code>，在调用函数时，可以只传入必选参数，也可以传入任意个的关键字参数：</p>
 <pre><code>test.py:
 def person(name, age, **kw):
     print(&apos;name:&apos;, name, &apos;age:&apos;, age, &apos;other:&apos;, kw)
@@ -375,7 +372,7 @@ name: Jack age: 25 other: {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos
 name: Jack age: 25 other: {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos;: &apos;Engineer&apos;}
 注意：kw获得的dict是extra的一份拷贝，对kw的改动不会影响到函数外地extra。
 </code></pre><p>关键字参数可以扩展函数功能，比如用在用户注册信息时，有些信息是必填项，有些信息是选填项。</p>
-<h1 id="命名关键字参数"><a href="#命名关键字参数" class="headerlink" title="命名关键字参数"></a>命名关键字参数</h1><p>对于关键字参数，函数调用者可以传入任意不受限制的关键字参数，至于到底传入了哪些，需要在函数内部进行检查：</p>
+<h1 id="5-命名关键字参数"><a href="#5-命名关键字参数" class="headerlink" title="5.命名关键字参数"></a>5.命名关键字参数</h1><p>对于关键字参数，函数调用者可以传入任意不受限制的关键字参数，至于到底传入了哪些，需要在函数内部进行检查：</p>
 <pre><code>test.py:
 def person(name, age, **kw):
     if &apos;city&apos; in kw:
@@ -402,7 +399,7 @@ name: Jack age: 25 other: {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos
 <p>命名关键字参数必须传入参数名，这和位置参数不同，如果没有传入参数名，系统将报错:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;python3 ~/python_test/test.py</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"/Users/lijing/python_test/test.py"</span>, line <span class="number">4</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    person(<span class="string">'Jack'</span>, <span class="number">25</span>, <span class="string">'Beijing'</span>, <span class="string">'Engineer'</span>)</span><br><span class="line">TypeError: person() missing <span class="number">2</span> required keyword-only arguments: <span class="string">'city'</span> <span class="keyword">and</span> <span class="string">'job'</span></span><br></pre></td></tr></table></figure></p>
 <p>由于调用时缺少参数名<code>city</code>和<code>job</code>，python解释器把四个参数都视为了位置参数，但是person函数只接受<code>name</code>和<code>age</code>两个位置参数，因此报错。此外命名关键字参数还可以使用默认缺省值：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, *, city = <span class="string">'Beijing'</span>, job)</span>:</span></span><br><span class="line">    print(name, age, city, job)</span><br></pre></td></tr></table></figure></p>
 <p>调用时可以不传入<code>city</code>参数，使用默认值<code>&#39;Beijing&#39;</code><br><strong>注意：使用命名关键字时，要特别注意<code>*</code>的使用，没有可变参数时必须加一个<code>*</code>作为特殊分隔符，如果缺少<code>*</code>，python解释器将无法识别位置参数和命名关键字参数。</strong></p>
-<h1 id="参数组合"><a href="#参数组合" class="headerlink" title="参数组合"></a>参数组合</h1><p>在python中定义函数，可以用必选参数、默认参数、可变参数、关键字参数和命名关键字参数，这5种参数都可以组合使用，但注意参数定义顺序必须是必选参数、默认参数、可变参数、命名关键字参数、关键字参数：<br>函数在调用时，python解释器自动按照参数位置和参数名把对应的参数传进去，而且，通过一个tuple和dict，也可以调用该函数：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ~/python_testtest.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(a, b, c=<span class="number">0</span>, *args, **kw)</span>:</span></span><br><span class="line">    print(a, b, c, args, kw)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(a, b, c=<span class="number">0</span>, *, d, **kw)</span>:</span></span><br><span class="line">    print(a, b, c, d, kw)</span><br><span class="line">args = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">kw = &#123;<span class="string">'d'</span>:<span class="number">99</span>, <span class="string">'x'</span>:<span class="string">'#'</span>&#125;</span><br><span class="line"></span><br><span class="line">f1(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">f1(<span class="number">1</span>,<span class="number">2</span>,c=<span class="number">3</span>)</span><br><span class="line">f1(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'a'</span>,<span class="string">'b'</span>)</span><br><span class="line">f1(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'a'</span>,<span class="string">'b'</span>,x=<span class="number">99</span>)</span><br><span class="line">f2(<span class="number">1</span>,<span class="number">2</span>,d=<span class="number">99</span>,ext=<span class="keyword">None</span>)</span><br><span class="line">f1(*args, **kw)</span><br><span class="line">f2(*args, **kw)</span><br><span class="line"></span><br><span class="line"><span class="comment">#iTerm2终端:</span></span><br><span class="line">&gt;&gt;&gt;python3 ~/python_test/test.py</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">0</span> () &#123;&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> () &#123;&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> (<span class="string">'a'</span>, <span class="string">'b'</span>) &#123;&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> (<span class="string">'a'</span>, <span class="string">'b'</span>) &#123;<span class="string">'x'</span>: <span class="number">99</span>&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">0</span> <span class="number">99</span> &#123;<span class="string">'ext'</span>: <span class="keyword">None</span>&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> () &#123;<span class="string">'d'</span>: <span class="number">99</span>, <span class="string">'x'</span>: <span class="string">'#'</span>&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">99</span> &#123;<span class="string">'x'</span>: <span class="string">'#'</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="6-参数组合"><a href="#6-参数组合" class="headerlink" title="6.参数组合"></a>6.参数组合</h1><p>在python中定义函数，可以用必选参数、默认参数、可变参数、关键字参数和命名关键字参数，这5种参数都可以组合使用，但注意参数定义顺序必须是必选参数、默认参数、可变参数、命名关键字参数、关键字参数：<br>函数在调用时，python解释器自动按照参数位置和参数名把对应的参数传进去，而且，通过一个tuple和dict，也可以调用该函数：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ~/python_testtest.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(a, b, c=<span class="number">0</span>, *args, **kw)</span>:</span></span><br><span class="line">    print(a, b, c, args, kw)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(a, b, c=<span class="number">0</span>, *, d, **kw)</span>:</span></span><br><span class="line">    print(a, b, c, d, kw)</span><br><span class="line">args = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">kw = &#123;<span class="string">'d'</span>:<span class="number">99</span>, <span class="string">'x'</span>:<span class="string">'#'</span>&#125;</span><br><span class="line"></span><br><span class="line">f1(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">f1(<span class="number">1</span>,<span class="number">2</span>,c=<span class="number">3</span>)</span><br><span class="line">f1(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'a'</span>,<span class="string">'b'</span>)</span><br><span class="line">f1(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'a'</span>,<span class="string">'b'</span>,x=<span class="number">99</span>)</span><br><span class="line">f2(<span class="number">1</span>,<span class="number">2</span>,d=<span class="number">99</span>,ext=<span class="keyword">None</span>)</span><br><span class="line">f1(*args, **kw)</span><br><span class="line">f2(*args, **kw)</span><br><span class="line"></span><br><span class="line"><span class="comment">#iTerm2终端:</span></span><br><span class="line">&gt;&gt;&gt;python3 ~/python_test/test.py</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">0</span> () &#123;&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> () &#123;&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> (<span class="string">'a'</span>, <span class="string">'b'</span>) &#123;&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> (<span class="string">'a'</span>, <span class="string">'b'</span>) &#123;<span class="string">'x'</span>: <span class="number">99</span>&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">0</span> <span class="number">99</span> &#123;<span class="string">'ext'</span>: <span class="keyword">None</span>&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> () &#123;<span class="string">'d'</span>: <span class="number">99</span>, <span class="string">'x'</span>: <span class="string">'#'</span>&#125;</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">99</span> &#123;<span class="string">'x'</span>: <span class="string">'#'</span>&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -497,10 +494,10 @@ name: Jack age: 25 other: {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            站点概览
           </li>
         </ul>
       
@@ -521,7 +518,7 @@ name: Jack age: 25 other: {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos
                 <a href="/archives">
               
                   <span class="site-state-item-count">7</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -534,7 +531,7 @@ name: Jack age: 25 other: {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">标签</span>
                 </a>
               </div>
             
@@ -566,7 +563,7 @@ name: Jack age: 25 other: {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#位置参数"><span class="nav-number">1.</span> <span class="nav-text">位置参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#默认参数"><span class="nav-number">2.</span> <span class="nav-text">默认参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可变参数"><span class="nav-number">3.</span> <span class="nav-text">可变参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关键字参数"><span class="nav-number">4.</span> <span class="nav-text">关键字参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命名关键字参数"><span class="nav-number">5.</span> <span class="nav-text">命名关键字参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参数组合"><span class="nav-number">6.</span> <span class="nav-text">参数组合</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-位置参数"><span class="nav-number">1.</span> <span class="nav-text">1.位置参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-默认参数"><span class="nav-number">2.</span> <span class="nav-text">2.默认参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-可变参数"><span class="nav-number">3.</span> <span class="nav-text">3.可变参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-关键字参数"><span class="nav-number">4.</span> <span class="nav-text">4.关键字参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-命名关键字参数"><span class="nav-number">5.</span> <span class="nav-text">5.命名关键字参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-参数组合"><span class="nav-number">6.</span> <span class="nav-text">6.参数组合</span></a></li></ol></div>
             
 
           </div>
@@ -596,7 +593,7 @@ name: Jack age: 25 other: {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -604,7 +601,7 @@ name: Jack age: 25 other: {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
