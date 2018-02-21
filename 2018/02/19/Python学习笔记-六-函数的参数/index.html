@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="DD5201314">
 <meta property="og:description" content="1.位置参数调用函数时，传入的值按照参数的位置顺序依次赋给参数。 2.默认参数默认参数很有用，但是使用不当可能掉坑里，默认参数有个最大的坑，如下：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-21T12:56:14.503Z">
+<meta property="og:updated_time" content="2018-02-21T16:22:15.890Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习笔记(六)函数的参数">
 <meta name="twitter:description" content="1.位置参数调用函数时，传入的值按照参数的位置顺序依次赋给参数。 2.默认参数默认参数很有用，但是使用不当可能掉坑里，默认参数有个最大的坑，如下：">
@@ -331,7 +331,7 @@
 &gt;&gt;&gt;add_end()
 [&apos;End&apos;]
 </code></pre><p>为什么要设计str、None这样的不变对象呢。不变对象一旦创建，对象内部的数据就不能修改，这样就减少了因为修改数据导致的错误，此外，由于对象不变，多任务环境下同时读取对象不需要加锁，同时读一点问题都没有。编写程序时，如果能设计一个不变对象，尽量设计成不变对象。</p>
-<h1 id="3-可变参数"><a href="#3-可变参数" class="headerlink" title="3.可变参数"></a>3.可变参数</h1><p>即传入的参数个数是可变的。以一个数学题为例，给定一组数字<code>a,b,c...</code>，计算<code>a&lt;sup&gt;2&lt;/sup&gt;+b&lt;sup&gt;2&lt;/sup&gt;+c&lt;sup&gt;2&lt;/sup&gt;+...</code><br>要定义出这个函数，我们必须确定输入的参数，由于参数个数不确定，可以想到把a,b,c作为一个list或tuple传进来，如下：</p>
+<h1 id="3-可变参数"><a href="#3-可变参数" class="headerlink" title="3.可变参数"></a>3.可变参数</h1><p>即传入的参数个数是可变的。以一个数学题为例，给定一组数字<code>a,b,c...</code>，计算a<sup>2</sup>+b<sup>2</sup>+c<sup>2</sup>+…<br>要定义出这个函数，我们必须确定输入的参数，由于参数个数不确定，可以想到把a,b,c作为一个list或tuple传进来，如下：</p>
 <pre><code>def calc(numbers):
     sum = 0
     for n in numbers:
